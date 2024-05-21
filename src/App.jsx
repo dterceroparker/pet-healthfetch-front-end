@@ -9,7 +9,6 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PetList from './pages/PetList/PetList'
-import PetDetails from './pages/PetDetails/PetDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'

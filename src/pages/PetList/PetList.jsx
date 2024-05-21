@@ -4,7 +4,7 @@
 import styles from './PetList.module.css'
 
 
-const PetList = (props) => {
+const PetList = () => {
   return ( 
     <main className={styles.container}>
       <h1>pet list</h1>

@@ -4,9 +4,7 @@ import { useParams, NavLink } from "react-router-dom"
 //services
 import * as petService from '../../services/petService'
 //components
-import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
-import Icon from '../../components/Icon/Icon'
 
 // css
 import styles from './PetDetails.module.css'
