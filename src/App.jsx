@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -8,6 +8,8 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import PetList from './pages/PetList/PetList'
+import PetDetails from './pages/PetDetails/PetDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,12 +17,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as petService from './services/petService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [pets, setPets] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -32,6 +36,16 @@ function App() {
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchAllPets = async () => {
+      const petsData = await petService.index()
+      setPets(petsData) 
+    }
+    if (user) fetchAllPets()
+  }, [user])
+
+
 
   return (
     <>
@@ -59,6 +73,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pets"
+          element={
+            <ProtectedRoute user={user}>
+              <PetList pets={pets} />
             </ProtectedRoute>
           }
         />
