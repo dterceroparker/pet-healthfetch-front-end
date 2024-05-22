@@ -1,3 +1,10 @@
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 input {
   margin-left: 16px;
   padding: 4px 8px;
@@ -9,10 +16,19 @@ input[type="file"] {
   padding: 0;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+input::file-selector-button { 
+  text-align: center;
+  border: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+  margin-right: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(31, 31, 226);
+border: 1px solid transparent;
+font-size: 1em;
+font-weight: 500;
+font-family: inherit;
+transition: border-color 0.25s;
 }
 
 .message {
@@ -36,10 +52,27 @@ input[type="file"] {
   justify-content: end;
   align-items: center;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .button {
   margin-left: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(31, 31, 226);
+border: 1px solid transparent;
+font-size: 1em;
+font-weight: 500;
+font-family: inherit;
+transition: border-color 0.25s;
+}
+
+.button:hover {
+  border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 9px auto -webkit-focus-ring-color;
 }
 
 .form > label:last-of-type {

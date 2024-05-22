@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.container section {
+  padding: 0px 22px;
+}
+
 .container > section {
   width: 100%;
   display: flex;
@@ -13,32 +17,35 @@
 }
 
 .container section > img {
+  justify-content: center;
   width: 25%;
   min-width: 46px;
   margin-bottom: 50px;
-  box-shadow: -1px 5px 19px -5px rgb(255, 250, 250);
+  box-shadow: -1px 5px 19px -5px rgb(226, 242, 4);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.15);
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.15);
 }
 
-/* .splash {
-  height: 91vh;
-  justify-content: center;
-} */
 
 .about {
+  height: 430px;
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.15);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.15);
-  -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.15);
-  margin-bottom: 50px;
+  -webkit-box-shadow: -1px 5px 19px -5px rgba(9, 89, 217, 0.214);
 }
 
-h2 {
+.about article {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.about article h2 {
   text-align: center;
+  margin: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 40px;
   padding: 6px;
-  width: 80%;
-  margin: 0 auto;
-  font-size: 30px;
   letter-spacing: 2px;
 }
 
@@ -56,12 +63,13 @@ h2 {
   display: flex;
   justify-content: center;
   color:  rgb(34, 15, 243);
-  border-top: 1px solid rgba(37, 112, 187, 0.32);
+  border-top: 1px dashed rgb(9, 165, 217);
 }
 
 .footer p {
   margin: 0;
   font-size: 15px;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1200px) {
