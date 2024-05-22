@@ -50,22 +50,26 @@ function App() {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" 
+          element={
+          <Landing user={user} />} 
+        />
         <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
               <Profiles />
-            </ProtectedRoute>
-          }
+            </ProtectedRoute>}
         />
         <Route
           path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
+          element={
+          <Signup handleAuthEvt={handleAuthEvt} />}
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
+          element={
+          <Login handleAuthEvt={handleAuthEvt} />}
         />
         <Route
           path="/auth/change-password"

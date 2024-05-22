@@ -15,6 +15,7 @@
 .container img {
   width: 25%;
   margin-top: 5px;
+  filter: drop-shadow(5px 5px 5px #066df461);
 }
 
 .container ul {
