@@ -1,11 +1,22 @@
+// npm modules
+import { NavLink } from 'react-router-dom'
+
+// components
+import Icon from '../Icon/Icon'
+import OwnerInfo from '../OwnerInfo/OwnerInfo'
+
 // css
 import styles from './PetCard.module.css'
 
-const PetCard = () => {
+const PetCard = ({ pet }) => {
   return (
-    <article className={styles.container}>
-      PetCard
-    </article>
+  
+    <NavLink to={`/pets/${pet._id}`}>
+      <article className={styles.container}>
+        PetCard
+      </article>
+    </NavLink>
+  
   )
 }
 

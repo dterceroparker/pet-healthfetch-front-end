@@ -15,7 +15,7 @@ const PetList = (props) => {
 
   return ( 
     <main className={styles.container}>
-      <h1>PUPPY LIST</h1>
+      <h1>PET MEMBERS</h1>
       {!props.pets.length && <h2>Oops! No pets here!</h2>}
 
       <ul>
