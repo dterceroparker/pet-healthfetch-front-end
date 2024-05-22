@@ -32,6 +32,7 @@ input[type="file"] {
 }
 
 .label {
+  font-weight: 600;
   width: 100%;
   display: flex;
   justify-content: end;
@@ -41,8 +42,34 @@ input[type="file"] {
 
 .button {
   margin-left: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(31, 31, 226);
+  transition: border-color 0.25s;
+  background: #d2dee395;
+}
+
+.button:hover {
+  border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 9px auto -webkit-focus-ring-color;
 }
 
 .form > label:last-of-type {
   margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 912px) {
+  .container section {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .container section:first-child {
+    display: none;
+  }
+  .container form {
+    min-width: 100%;
+  }
 }

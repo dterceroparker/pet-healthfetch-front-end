@@ -7,12 +7,14 @@
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
-  background: white;
-  border-bottom: 1px solid rgb(200, 200, 200);
+  box-shadow: -1px 5px 19px -5px rgba(52, 25, 228, 0.082);
+  -moz-box-shadow: -1px 5px 19px -5px rgb(11, 36, 231);
+  -webkit-box-shadow: -1px 5px 19px -5px rgba(232, 9, 9, 0.25);
 }
 
 .container img {
-  width: 50px;
+  width: 25%;
+  margin-top: 5px;
 }
 
 .container ul {
