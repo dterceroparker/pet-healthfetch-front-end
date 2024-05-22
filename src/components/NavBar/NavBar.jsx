@@ -1,5 +1,9 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
+import logo from '../../assets/branding/logo.png'
+
+//css
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (

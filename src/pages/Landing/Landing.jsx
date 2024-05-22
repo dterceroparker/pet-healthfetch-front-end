@@ -10,20 +10,15 @@ const Landing = ({ user }) => {
       <h1>Hello, {user ? user.name : 'friend'}</h1>
       <section className={styles.splash}>
           <img src={logo} alt="A cute pet" />
-        </section>
-        <section className={styles.about}>
-          <header>
-            <h1>ABOUT US</h1>
-          </header>
-          <article>
-            <p>
-            Our app, Pet healthFetch, is The Best Choice for Your Pets Health Care Needs! No Need to Text with your Vet Anymore! 
-            With our app, you can effortlessly create a profile of your pet, and request a new visit right from the app. 
-            Our app allows users to keep track of their vet visit history and features a photo upload option in the appointment form! 
-            Pet healthfetch is the ultimate companion for pet owners—ensuring that their furry friends receive the best care possible-anytime, anywhere!
-            </p>
-          </article>
-        </section>
+      </section>
+      <section className={styles.about}>
+        <article>
+          <h2>
+          Pet HealthFetch strives to meet all of your pet healthcare needs! No need to text with your vet anymore! With our app, members effortlessly create a profile of their pet along with a snapshot of their medical health record and request visits right from their phone. Our app allows users to keep track of their vet visit history and features a photo upload option in the appointment form!
+          Pet HealthFetch is the ultimate companion for pet owners - ensuring that their furry friends receive the best care possible - <br></br> anytime, anywhere!
+          </h2>
+        </article>
+      </section>
     </main>
     <footer className={styles.footer}>
         <p>© 2024 HEALTHFETCH INC. PET RIGHTS RESERVED</p>
