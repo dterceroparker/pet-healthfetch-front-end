@@ -4,6 +4,7 @@ import { useParams, NavLink } from "react-router-dom"
 //services
 import * as petService from '../../services/petService'
 //components
+import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
 
 // css
@@ -22,11 +23,17 @@ const PetDetails = (props) => {
     fetchPet()
   }, [petId])
 
+  if (!pet) return <Loading />
+
   return (  
     <main className={styles.container}>
+      <div>
+        {/* <img src={pet.photo} alt="Pet Photo" /> */}
+      </div>
       <article>
-        <h1>Pet Information:</h1>
         <OwnerInfo content={pet} />
+        <h1>Pet Information:</h1>
+          <h5>Pet Name: {pet.name.toUpperCase()}</h5>
           <h5>Phone Number: {pet.phone}</h5>
           <h5>Address: {pet.address}</h5>
           <h5>DOB: </h5>
@@ -42,7 +49,7 @@ const PetDetails = (props) => {
             {pet.owner._id === props.user.profile &&
               <>
                 <NavLink to='/pets' state={pet}>
-                </NavLink>
+                </NavLink> 
               </>
               }
           </span>
