@@ -27,8 +27,8 @@ const PetDetails = (props) => {
 
   return (  
     <main className={styles.container}>
-      <div>
-        {/* <img src={pet.photo} alt="Pet Photo" /> */}
+      <div key={pet.photo} >
+        <img  src={pet.photo} alt="A photo of this puppy" />
       </div>
       <article>
         <header>
