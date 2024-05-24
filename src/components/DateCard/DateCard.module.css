@@ -1,8 +1,12 @@
 .container {
+  opacity: 0.8;
   display: flex;
+  align-items: center;
 }
 
-.container div {
- height: 10px;
- width: 10px;
+.container img {
+  width: 17px;
+  height: 17px;
+  margin-right: 2px;
+  margin-left: -2px;
 }

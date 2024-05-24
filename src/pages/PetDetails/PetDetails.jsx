@@ -31,29 +31,34 @@ const PetDetails = (props) => {
         {/* <img src={pet.photo} alt="Pet Photo" /> */}
       </div>
       <article>
-        <OwnerInfo content={pet} />
-        <h1>Pet Information:</h1>
-          <h5>Pet Name: {pet.name.toUpperCase()}</h5>
-          <h5>Phone Number: {pet.phone}</h5>
-          <h5>Address: {pet.address}</h5>
-          <h5>DOB: </h5>
-          <h5>Breed: {pet.breed}</h5>
-          <h5>Color: {pet.color}</h5>
-          <h5>Sex: {pet.sex}</h5>
-          <h5>Elixir: {pet.elixir}</h5>
-          <h5>Medical History: {pet.medicalHistory}</h5>
-          <h5>Medications: {pet.medications}</h5>
-          <h5>Allergies: {pet.allergies}</h5>
-          <h5>Vet Name: {pet.vetName}</h5>
-          <span>
-            {pet.owner._id === props.user.profile &&
-              <>
-                <NavLink to='/pets' state={pet}>
-                </NavLink> 
-              </>
-              }
-          </span>
-        </article>
+        <header>
+          <OwnerInfo content={pet} />
+          <h1>Pet Information:</h1>
+        </header>
+        <h5>Name: {pet.name.toUpperCase()}</h5>
+        <h5>Phone Number: {pet.phone}</h5>
+        <h5>Address: {pet.address}</h5>
+        <h5>DOB: </h5>
+        <h5>Breed: {pet.breed}</h5>
+        <h5>Color: {pet.color}</h5>
+        <h5>Sex: {pet.sex}</h5>
+        <h5>Elixir: {pet.elixir}</h5>
+        <h5>Medical History: {pet.medicalHistory}</h5>
+        <h5>Medications: {pet.medications}</h5>
+        <h5>Allergies: {pet.allergies}</h5>
+        <h5>Vet Name: {pet.vetName}</h5>
+        <span>
+          {pet.owner._id === props.user.profile &&
+            <>
+              <NavLink to='/pets' state={pet}>
+              </NavLink> 
+            </>
+            }
+        </span>
+      </article>
+      <section className={styles.visit}>
+        <h1>Visits</h1>
+      </section>
     </main>
   )
 }

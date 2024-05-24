@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PetList from './pages/PetList/PetList'
 import PetDetails from './pages/PetDetails/PetDetails'
+import NewPet from './pages/NewPet/NewPet'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -45,7 +46,11 @@ function App() {
     if (user) fetchAllPets()
   }, [user])
 
-
+  const handleAddPet = async formData => {
+    const newPet = await petService.create(formData)
+    setPets([newPet, ...pets])
+    navigate('/pets')
+  }
 
   return (
     <>
@@ -93,6 +98,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <PetDetails user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pets/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewPet handleAddPet={handleAddPet}/>
             </ProtectedRoute>
           }
         />

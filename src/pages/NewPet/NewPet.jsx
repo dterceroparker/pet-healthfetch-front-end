@@ -1,10 +1,17 @@
 //npm modules
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+//services
+// import * as petService from './services/petService'
+
 // css
 import styles from './NewPet.module.css'
 
 const NewPet = (props) => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
+    photo: '',
     name: '',
     phone: '',
     address: '',
@@ -18,6 +25,8 @@ const NewPet = (props) => {
     allergies: '',
     vetName: '',
   })
+  // const [photoData, setPhotoData] = useState({ photo: null })
+  // const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = evt => {
     evt.preventDefault()
@@ -27,6 +36,19 @@ const NewPet = (props) => {
   const handleChange = evt => {
     setFormData({...formData, [evt.target.name]: evt.target.value})
   }
+
+  const handleNavigateHome = () => {
+    navigate('/')
+  }
+
+  const isFormInvalid = () => {
+    return !(formData.name && formData.phone && formData.address)
+  }
+
+  const handleChangePhoto = evt => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
+
 
   return (
     <main className={styles.container}>
@@ -154,7 +176,18 @@ const NewPet = (props) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <label>
+          Upload Photo
+          <input 
+          type="file" 
+          name="photo" 
+          onChange={handleChangePhoto} 
+          />
+        </label>
+        <div>
+          <button disabled={isFormInvalid()} type="submit">Submit</button>
+          <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
+        </div>
       </form>
     </main>
   )
