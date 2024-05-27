@@ -1,6 +1,8 @@
 //npm modules
-import { useState, useRef } from 'react'
-import { useNavigate, useParams } from "react-router-dom"
+import { useState } from 'react'
+// import { useState, useRef } from 'react'
+import { useNavigate } from "react-router-dom"
+// import { useNavigate, useParams } from "react-router-dom"
 
 
 //services
@@ -9,13 +11,15 @@ import { useNavigate, useParams } from "react-router-dom"
 // css
 import styles from './NewPet.module.css'
 
-const NewPet = ({ props, handleAddPhoto }) => {
+
+// const NewPet = ({ handleAddPet, handleAddPhoto }) => {
+const NewPet = ({ handleAddPet }) => {
   const navigate = useNavigate()
-  const { petId } = useParams()
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [message, setMessage] = useState('')
-  const [photoData, setPhotoData] = useState({ photo: null })
-  const imgInputRef = useRef(null)
+  // const { petId } = useParams()
+  // const [isSubmitted, setIsSubmitted] = useState(false)
+  // const [message, setMessage] = useState('')
+  // const [photoData, setPhotoData] = useState({ photo: null })
+  // const imgInputRef = useRef(null)
   const [formData, setFormData] = useState({
     photo: '',
     name: '',
@@ -35,17 +39,19 @@ const NewPet = ({ props, handleAddPhoto }) => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    props.handleAddPet(formData)
-    try {
-      evt.preventDefault()
-      setIsSubmitted(true)
-      await handleAddPhoto(photoData.photo, petId)
-      imgInputRef.current.value = null
-      setIsSubmitted(false)
-    } catch (err) {
-      console.log(err)
-      setIsSubmitted(false)
-    }
+    handleAddPet(formData)
+    console.log({formData})
+
+    // try {
+    //   evt.preventDefault()
+    //   setIsSubmitted(true)
+    //   await handleAddPhoto(photoData.photo, petId)
+    //   imgInputRef.current.value = null
+    //   setIsSubmitted(false)
+    // } catch (err) {
+    //   console.log(err)
+    //   setIsSubmitted(false)
+    // }
   }
 
   const handleChange = evt => {
@@ -61,41 +67,41 @@ const NewPet = ({ props, handleAddPhoto }) => {
   }
 
 
-  const handleChangePhoto = evt => {
-    if (evt.target.files.length) {
-      const file = evt.target.files[0]
-      let isFileInvalid = false
-      let errMsg = ""
-      const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
-      const photoFormat = file.name.split('.').at(-1)
+  // const handleChangePhoto = evt => {
+  //   if (evt.target.files.length) {
+  //     const file = evt.target.files[0]
+  //     let isFileInvalid = false
+  //     let errMsg = ""
+  //     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
+  //     const photoFormat = file.name.split('.').at(-1)
   
-      // cloudinary supports files up to 10.4MB each as of May 2023
-      if (file.size >= 10485760) {
-        errMsg = "Image must be smaller than 10.4MB"
-        isFileInvalid = true
-      }
-      if (!validFormats.includes(photoFormat)) {
-        errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
-        isFileInvalid = true
-      }
+  //     // cloudinary supports files up to 10.4MB each as of May 2023
+  //     if (file.size >= 10485760) {
+  //       errMsg = "Image must be smaller than 10.4MB"
+  //       isFileInvalid = true
+  //     }
+  //     if (!validFormats.includes(photoFormat)) {
+  //       errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+  //       isFileInvalid = true
+  //     }
       
-      setMessage(errMsg)
+  //     setMessage(errMsg)
       
-      if (isFileInvalid) {
-        imgInputRef.current.value = null
-        return
-      }
+  //     if (isFileInvalid) {
+  //       imgInputRef.current.value = null
+  //       return
+  //     }
   
-      setPhotoData({ photo: evt.target.files[0] })
-    } else {
-      setPhotoData({ photo: null})
-    }
-  }
+  //     setPhotoData({ photo: evt.target.files[0] })
+  //   } else {
+  //     setPhotoData({ photo: null})
+  //   }
+  // }
 
 
   return (
     <main className={styles.container}>
-      <p>{message}</p>
+      {/* <p>{message}</p> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input
@@ -220,7 +226,7 @@ const NewPet = ({ props, handleAddPhoto }) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           Upload Photo
           <input 
             type="file" 
@@ -235,9 +241,9 @@ const NewPet = ({ props, handleAddPhoto }) => {
           >
             {!isSubmitted ? 'Add Photo' : '🚀 Sending...'}
           </button>
-        </form>
+        </form> */}
         <div>
-        <button disabled={isFormInvalid()} type="submit">Submit</button>
+          <button disabled={isFormInvalid()} type="submit">Submit</button>
           <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
         </div>
       </form>

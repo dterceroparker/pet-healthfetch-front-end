@@ -21,7 +21,7 @@ const NavBar = ({ user, handleLogout }) => {
       <p>Hello, {user ? user.name : 'friend'}</p>
       <li><NavLink to="/profiles">PROFILES</NavLink></li>
       <li><NavLink to="/pets">PETS</NavLink></li>
-      <li><NavLink to="/pets">NEW PET</NavLink></li>
+      <li><NavLink to="/pets/new">NEW PET</NavLink></li>
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
     </ul>
 )
