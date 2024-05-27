@@ -38,7 +38,7 @@ const PetDetails = (props) => {
         <h5>Name: {pet.name.toUpperCase()}</h5>
         <h5>Phone Number: {pet.phone}</h5>
         <h5>Address: {pet.address}</h5>
-        <h5>DOB: </h5>
+        <h5>DOB: {new Date(pet.birthDate).toLocaleDateString()}</h5>
         <h5>Breed: {pet.breed}</h5>
         <h5>Color: {pet.color}</h5>
         <h5>Sex: {pet.sex}</h5>
