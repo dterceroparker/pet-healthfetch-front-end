@@ -59,7 +59,6 @@ async function update(petFormData) {
 
 async function addPhoto(photoData, petId) {
   try {
-    console.log(photoData, petId)
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
     const res = await fetch(`${BASE_URL}/${petId}/add-photo`, {

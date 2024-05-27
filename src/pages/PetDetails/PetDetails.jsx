@@ -6,6 +6,7 @@ import * as petService from '../../services/petService'
 //components
 import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
+import Icon from '../../components/Icon/Icon'
 
 // css
 import styles from './PetDetails.module.css'
@@ -25,11 +26,12 @@ const PetDetails = (props) => {
 
   if (!pet) return <Loading />
 
-  return (  
+  return ( 
     <main className={styles.container}>
       <div key={pet.photo} >
         <img  src={pet.photo} alt="A photo of this puppy" />
       </div>
+    {/* {user.profile === pet.owner &&  */}
       <article>
         <header>
           <OwnerInfo content={pet} />
@@ -50,7 +52,8 @@ const PetDetails = (props) => {
         <span>
           {pet.owner._id === props.user.profile &&
             <>
-              <NavLink to='/pets' state={pet}>
+              <NavLink to='/pets/edit' state={pet}>
+                <Icon category='Edit' className={styles.editBtn} />
               </NavLink> 
             </>
             }
@@ -62,5 +65,6 @@ const PetDetails = (props) => {
     </main>
   )
 }
+
 
 export default PetDetails

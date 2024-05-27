@@ -39,7 +39,7 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
       evt.preventDefault()
       handleAddPet(formData)
       setIsSubmitted(true)
-      await handleAddPhoto(photoData.photo)
+      await handleAddPhoto(formData, photoData.photo, petId)
       imgInputRef.current.value = null
       setIsSubmitted(false)
     } catch (err) {
@@ -218,26 +218,29 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <form className={styles.photo} onSubmit={handleSubmit}>
+        <form className={styles.photo} 
+          onSubmit={handleSubmit}>
           Upload Photo
           <input 
             type="file" 
             name="photo"
-            className="add-photo-input"
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
           <button
             disabled={ isSubmitted || !imgInputRef.current?.value }
-            className="add-photo-btn"
             type='submit'
           >
             {!isSubmitted ? 'Add Photo' : '🚀 Sending...'}
           </button>
         </form>
         <div className={styles.submit}>
-          <button disabled={isFormInvalid()} type="submit">Submit</button>
-          <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
+          <button 
+            disabled={isFormInvalid() || isSubmitted } 
+            type="submit">Submit</button>
+          <button 
+            onClick={handleNavigateHome} >Cancel
+          </button>
         </div>
       </form>
     </main>
