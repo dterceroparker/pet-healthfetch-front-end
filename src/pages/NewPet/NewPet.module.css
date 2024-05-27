@@ -48,12 +48,30 @@ button[type="submit"] {
   border: 1.5px solid rgba(255, 255, 255, .6);
 }
 
+.photo input {
+  width: 42%;
+  background-color: #0e7af66b;
+  box-shadow: none;
+  border: none;
+  resize: none;
+  gap: 30px;
+}
+
+.photo button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35% !important;
+}
+
+
 .container > form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   background: rgb(255, 255, 255, 0.3);
   padding: 3em;
   border-radius: 20px;
@@ -61,10 +79,11 @@ button[type="submit"] {
   text-align: center;
 }
 
-.container button {
+.submit {
   display: flex;
   flex-direction: row;
   margin-top: 24px;
   border-radius: 8px;
   padding: 8px;
+  gap: 30px;
 }
