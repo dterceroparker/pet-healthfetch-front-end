@@ -7,8 +7,9 @@ import styles from './OwnerInfo.module.css'
 
 
 const OwnerInfo = ({ content }) => {
-  const photo = content.owner.photo ? content.owner.photo : profileIcon
-
+console.log({content})
+const photo = content.owner?.photo ? content.owner.photo : profileIcon
+console.log({photo})
   return (
     <div className={styles.container}>
       <img src={photo} alt="The user's avatar" />

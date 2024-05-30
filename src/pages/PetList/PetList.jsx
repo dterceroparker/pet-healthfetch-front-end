@@ -12,7 +12,7 @@ const PetList = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
+console.log({props: props.pets})
   return ( 
     <main className={styles.container}>
       <h1>PET MEMBERS</h1>

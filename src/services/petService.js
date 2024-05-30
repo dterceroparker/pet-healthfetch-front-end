@@ -35,8 +35,9 @@ async function create(petFormData, photoData) {
       },
       body: JSON.stringify(petFormData)
     })
+    console.log({res})
     const json = await res.json()
-
+    console.log({json})
     if (json.err) throw new Error(json.err)
 
     if (json.token) {

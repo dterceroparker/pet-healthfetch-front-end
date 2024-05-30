@@ -34,6 +34,7 @@ const NewPet = ({ handleAddPet }) => {
   
 
   const handleSubmit = async evt => {
+    console.log({formData})
     evt.preventDefault()
     try {
       handleAddPet(formData)
@@ -86,7 +87,7 @@ const NewPet = ({ handleAddPet }) => {
       imgInputRef.current.value = null
       return
     }
-
+    console.log({photo: evt.target.files})
     setPhotoData({ photo: evt.target.files[0] })
   }
 
