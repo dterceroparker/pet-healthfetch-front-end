@@ -15,7 +15,7 @@ const NewPet = ({ handleAddPet }) => {
   // const { petId } = useParams()
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
-    // photo: '',
+    photo: '',
     name: '',
     phone: '',
     address: '',

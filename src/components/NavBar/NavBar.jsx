@@ -20,9 +20,9 @@ const NavBar = ({ user, handleLogout }) => {
     <ul>
       <p>Hello, {user ? user.name : 'friend'}</p>
       <li><NavLink to="/profiles">PROFILES</NavLink></li>
-      <li><NavLink to="/pets">ALL-PETS</NavLink></li>
+      <li><NavLink to="/pets">PETS</NavLink></li>
       <li><NavLink to="/pets/new">NEW PET-IENT</NavLink></li>
-      <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
+      <li><NavLink to="/auth/logout" onClick={handleLogout}>LOG OUT</NavLink></li>
     </ul>
 )
 

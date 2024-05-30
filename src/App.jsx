@@ -46,17 +46,17 @@ function App() {
     if (user) fetchAllPets()
   }, [user])
 
-  const handleAddPet = async (petFormData) => {
+  const handleAddPet = async petFormData => {
     const newPet = await petService.create(petFormData)
     setPets([newPet, ...pets])
     navigate('/pets')
   }
 
-  const handleAddPhoto = async (photoData, petId) => {
-    const newPet = await petService.addPhoto(photoData, petId)
-    setPets(pets.map(pet => pet._id === newPet._id ? newPet : pet))
-    navigate(`/pets/${petId}`)
-  }
+  // const handleAddPhoto = async (photoData, petId) => {
+  //   const newPet = await petService.addPhoto(photoData, petId)
+  //   setPets(pets.map(pet => pet._id === newPet._id ? newPet : pet))
+  //   navigate(`/pets/${petId}`)
+  // }
 
   return (
     <>
@@ -113,7 +113,7 @@ function App() {
             <ProtectedRoute user={user}>
               <NewPet 
               handleAddPet={handleAddPet}
-              handleAddPhoto={handleAddPhoto}
+              // handleAddPhoto={handleAddPhoto}
               />
             </ProtectedRoute>
           }
