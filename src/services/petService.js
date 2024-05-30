@@ -25,7 +25,7 @@ async function show(petId) {
   }
 }
 
-async function create(petFormData) {
+async function create(formData, photoData) {
   try {
     const res = await fetch(BASE_URL, {
       method: 'POST',
@@ -33,8 +33,19 @@ async function create(petFormData) {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(petFormData)
+      body: JSON.stringify(formData)
     })
+    const json = await res.json()
+
+    if (json.err) throw new Error(json.err)
+
+    if (json.token) {
+      tokenService.setToken(json.token)
+
+      if (photoData) {
+        await addPhoto(photoData)
+      }
+    }
     return res.json()
   } catch (error) {
     console.log(error)

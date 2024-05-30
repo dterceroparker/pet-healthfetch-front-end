@@ -1,24 +1,21 @@
 //npm modules
 import { useState, useRef } from 'react'
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 //services
-// import * as petService from './services/petService'
+import * as petService from '../../services/petService'
 
 // css
 import styles from './NewPet.module.css'
 
-const NewPet = ({ handleAddPet, handleAddPhoto }) => {
+const NewPet = ({ handleAddPet }) => {
   const navigate = useNavigate()
-  const { petId } = useParams()
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [message, setMessage] = useState('')
-  console.log(message)
-  const [photoData, setPhotoData] = useState({ photo: null })
   const imgInputRef = useRef(null)
+  // const { petId } = useParams()
+  const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
-    photo: '',
+    // photo: '',
     name: '',
     phone: '',
     address: '',
@@ -32,23 +29,27 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
     allergies: '',
     vetName: '',
   })
+  const [photoData, setPhotoData] = useState({ photo: null })
+  const [isSubmitted, setIsSubmitted] = useState(false)
   
 
   const handleSubmit = async evt => {
+    evt.preventDefault()
     try {
-      evt.preventDefault()
       handleAddPet(formData)
       setIsSubmitted(true)
-      await handleAddPhoto(formData, photoData.photo, petId)
-      imgInputRef.current.value = null
-      setIsSubmitted(false)
+      await petService.create(formData, photoData.photo)
+      navigate('/')
+      // imgInputRef.current.value = null
     } catch (err) {
       console.log(err)
+      setMessage(err.message)
       setIsSubmitted(false)
     }
   }
 
   const handleChange = evt => {
+    setMessage('')
     setFormData({...formData, [evt.target.name]: evt.target.value})
   }
 
@@ -56,39 +57,37 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
     navigate('/')
   }
 
+  const { name, phone, address, birthDate, breed, color, sex, elixir, medicalHistory, medications, allergies, vetName } = formData
+
   const isFormInvalid = () => {
-    return !(formData.name && formData.phone && formData.address)
+    return !(name && phone && address && birthDate && breed && color && sex && elixir && medicalHistory && medications && allergies && vetName)
   }
 
   const handleChangePhoto = evt => {
-    if (evt.target.files.length) {
-      const file = evt.target.files[0]
-      let isFileInvalid = false
-      let errMsg = ""
-      const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
-      const photoFormat = file.name.split('.').at(-1)
-  
-      // cloudinary supports files up to 10.4MB each as of May 2023
-      if (file.size >= 10485760) {
-        errMsg = "Image must be smaller than 10.4MB"
-        isFileInvalid = true
-      }
-      if (!validFormats.includes(photoFormat)) {
-        errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
-        isFileInvalid = true
-      }
-      
-      setMessage(errMsg)
-      
-      if (isFileInvalid) {
-        imgInputRef.current.value = null
-        return
-      }
-  
-      setPhotoData({ photo: evt.target.files[0] })
-    } else {
-      setPhotoData({ photo: null})
+    const file = evt.target.files[0]
+    let isFileInvalid = false
+    let errMsg = ""
+    const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
+    const photoFormat = file.name.split('.').at(-1)
+
+    // cloudinary supports files up to 10.4MB each as of May 2023
+    if (file.size >= 10485760) {
+      errMsg = "Image must be smaller than 10.4MB"
+      isFileInvalid = true
     }
+    if (!validFormats.includes(photoFormat)) {
+      errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+      isFileInvalid = true
+    }
+    
+    setMessage(errMsg)
+    
+    if (isFileInvalid) {
+      imgInputRef.current.value = null
+      return
+    }
+
+    setPhotoData({ photo: evt.target.files[0] })
   }
 
   return (
@@ -218,8 +217,7 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <form className={styles.photo} 
-          onSubmit={handleSubmit}>
+        <form className={styles.photo} >
           Upload Photo
           <input 
             type="file" 
@@ -227,21 +225,16 @@ const NewPet = ({ handleAddPet, handleAddPhoto }) => {
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
-          <button
-            disabled={ isSubmitted || !imgInputRef.current?.value }
+        </form>
+        <>
+        <button
+            disabled={ isFormInvalid() || isSubmitted }
             type='submit'
           >
-            {!isSubmitted ? 'Add Photo' : '🚀 Sending...'}
+            {!isSubmitted ? 'Register Pet-ient' : '🚀 Sending...'}
           </button>
-        </form>
-        <div className={styles.submit}>
-          <button 
-            disabled={isFormInvalid() || isSubmitted } 
-            type="submit">Submit</button>
-          <button 
-            onClick={handleNavigateHome} >Cancel
-          </button>
-        </div>
+          <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
+        </>
       </form>
     </main>
   )
