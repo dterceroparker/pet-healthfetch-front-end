@@ -12,9 +12,13 @@ const Landing = () => {
       </section>
       <section className={styles.about}>
         <article>
-          <h2>
-          Pet HealthFetch strives to meet all of your pet healthcare needs! No need to text your vet anymore! With our app, members effortlessly create a profile of their pet along with a snapshot of their medical health record and request visits right from their phone. Our app allows users to keep track of their vet visit history and features a photo upload option in the appointment form! Pet HealthFetch is the ultimate companion for pet owners - ensuring that their furry friends receive the best care possible - <br></br> anytime, anywhere!
-          </h2>
+          <p>
+          Pet HealthFetch is your one-stop solution for all your pet healthcare needs! Say goodbye to the hassle of texting your vet - our app makes managing your pet's health effortless. With just a few taps on your phone, members can create a profile for their beloved pets, including a snapshot of their medical records, and easily request visits. 
+          <br></br>
+          Our user-friendly app keeps track of your pet's vet visit history, putting all the important information right at your fingertips. Plus, with the convenient photo upload option in the appointment form, you can share any necessary details with your vet seamlessly. <br />
+
+          Pet HealthFetch is the ultimate companion for pet owners, ensuring that your furry friends receive the best care possible, anytime and anywhere. Experience peace of mind knowing that you can manage your pet's health with ease, all from the palm of your hand. <br />
+          </p>
         </article>
       </section>
     </main>
