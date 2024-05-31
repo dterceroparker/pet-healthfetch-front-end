@@ -47,7 +47,7 @@ async function create(petFormData, photoData) {
         await addPhoto(photoData)
       }
     }
-    return res.json()
+    return json
   } catch (error) {
     console.log(error)
   }

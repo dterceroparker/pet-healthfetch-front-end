@@ -37,10 +37,10 @@ const NewPet = ({ handleAddPet }) => {
     console.log({formData})
     evt.preventDefault()
     try {
-      handleAddPet(formData)
       setIsSubmitted(true)
-      await petService.create(formData, photoData.photo)
-      navigate('/')
+      await handleAddPet(formData)
+      // await petService.create(formData, photoData.photo)
+      // navigate('/')
       // imgInputRef.current.value = null
     } catch (err) {
       console.log(err)
