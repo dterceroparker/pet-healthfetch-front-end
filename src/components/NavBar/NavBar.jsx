@@ -22,7 +22,7 @@ const NavBar = ({ user, handleLogout }) => {
       <li><NavLink to="/profiles"><i className="fas fa-solid fa-user"></i></NavLink></li>
       <li><NavLink to="/pets"><i className="fa-solid fa-dog"></i> <i className="fa-solid fa-cat"></i></NavLink></li>
       <li><NavLink to="/pets/new"><i className="fa-solid fa-file-pen"></i></NavLink></li>
-      <li><NavLink to="/auth/logout" onClick={handleLogout}><i className='fas fa-solid fa-door-open fa-2x'></i></NavLink> </li>
+      <li><NavLink to='/' onClick={handleLogout}><i className='fas fa-solid fa-door-open fa-2x'></i></NavLink> </li>
     </ul>
 )
 
