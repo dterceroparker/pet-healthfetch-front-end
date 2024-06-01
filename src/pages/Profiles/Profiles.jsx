@@ -25,10 +25,12 @@ const Profiles = () => {
   
   return (
     <main className={styles.container}>
-      <h1>Hello! This is a list of all the profiles.</h1>
+      <h1>Pet Parents</h1>
       {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
-        
+      <>
+      <p key={profile._id}>{profile.name}</p>
+        <img src={profile.photo} alt="Profile Picture" />
+      </>
       ))}
     </main>
   )

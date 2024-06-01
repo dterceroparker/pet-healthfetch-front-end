@@ -8,7 +8,7 @@ import styles from './OwnerInfo.module.css'
 
 const OwnerInfo = ({ content }) => {
 console.log({content})
-const photo = content.owner?.photo ? content.owner.photo : profileIcon
+const photo = content.owner.photo ? content.owner.photo : profileIcon
 console.log({photo})
   return (
     <div className={styles.container}>

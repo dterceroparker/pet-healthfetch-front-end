@@ -3,11 +3,36 @@
   height: 220px;
   padding: 14px 21px;
   border-radius: 5px;
-  border: 1px solid var(--border);
-  background-color: var(--card-background);
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+
+  /* height: 10vh; */
+  min-width: 25vw;
+  border-radius: 8px;
+  border: 1px solid rgba(100, 148, 237, 0.52);
+  padding: 40px;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  color: rgba(20, 35, 240, 0.87);
+  cursor: pointer;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+}
+
+.container:hover {
+  border-color: #d2e013;
+  color:rgb(245, 247, 249)
+}
+
+.container:focus,
+.container:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 .container header {
