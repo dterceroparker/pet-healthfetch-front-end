@@ -46,9 +46,9 @@ function App() {
     if (user) fetchAllPets()
   }, [user])
 
-  const handleAddPet = async petFormData => {
+  const handleAddPet = async (petFormData, photoData) => {
     console.log("handleAddPet", {petFormData})
-    const newPet = await petService.create(petFormData)
+    const newPet = await petService.create(petFormData, photoData)
     console.log({newPet})
     setPets([newPet, ...pets])
     navigate('/pets')

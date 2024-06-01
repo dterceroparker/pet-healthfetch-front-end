@@ -6,15 +6,16 @@
 
 .container * {
   margin: 0;
+  color: rgb(0, 13, 255);
 }
 
-.container > img {
+.container img {
   width: 32px;
   height: 32px;
   object-fit: cover;
   margin-right: 12px;
   border-radius: 50%;
-  background-color: rgb(102, 116, 238);
+  /* background-color: rgb(102, 116, 238); */
 }
 
 .container h4 {

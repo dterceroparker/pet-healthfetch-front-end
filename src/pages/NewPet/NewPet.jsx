@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 
 //services
-import * as petService from '../../services/petService'
+// import * as petService from '../../services/petService'
 
 // css
 import styles from './NewPet.module.css'
@@ -38,7 +38,8 @@ const NewPet = ({ handleAddPet }) => {
     evt.preventDefault()
     try {
       setIsSubmitted(true)
-      await handleAddPet(formData)
+      console.log({photoData})
+      await handleAddPet(formData, photoData.photo)
       // await petService.create(formData, photoData.photo)
       // navigate('/')
       // imgInputRef.current.value = null
@@ -218,7 +219,7 @@ const NewPet = ({ handleAddPet }) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <form className={styles.photo} >
+        <label className={styles.photo} >
           Upload Photo
           <input 
             type="file" 
@@ -226,7 +227,7 @@ const NewPet = ({ handleAddPet }) => {
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
-        </form>
+        </label>
         <>
         <button
             disabled={ isFormInvalid() || isSubmitted }

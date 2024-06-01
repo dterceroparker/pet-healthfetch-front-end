@@ -44,7 +44,7 @@ async function create(petFormData, photoData) {
       tokenService.setToken(json.token)
 
       if (photoData) {
-        await addPhoto(photoData)
+        await addPhoto(photoData, json._id)
       }
     }
     return json
@@ -73,6 +73,7 @@ async function addPhoto(photoData, petId) {
   try {
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
+    console.log(photoFormData)
     const res = await fetch(`${BASE_URL}/${petId}/add-photo`, {
       method: 'PUT',
       headers: {
@@ -80,7 +81,7 @@ async function addPhoto(photoData, petId) {
       },
       body: photoFormData,
     })
-    return await res.json()
+    return res.json()
   } catch (err) {
     throw new Error(err)
   }

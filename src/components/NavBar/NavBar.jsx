@@ -4,8 +4,11 @@ import { NavLink } from 'react-router-dom'
 //assets
 import logo from '../../assets/branding/logo.png'
 
+
+
 //css
 import styles from './NavBar.module.css'
+
 
 const NavBar = ({ user, handleLogout }) => {
   const publicLinks = (
@@ -18,9 +21,10 @@ const NavBar = ({ user, handleLogout }) => {
 
   const protectedLinks = (
     <ul>
-      <p>Hello, {user ? user.name : 'friend'}</p>
+      <p>Hello, {user ? user.name : 'friend'}</p> 
+      {/* <img src={user.photo}/> */}
       <li><NavLink to="/profiles"><i className="fas fa-solid fa-user"></i></NavLink></li>
-      <li><NavLink to="/pets"><i className="fa-solid fa-dog"></i> <i className="fa-solid fa-cat"></i></NavLink></li>
+      <li><NavLink to="/pets"><i className="fa-solid fa-cat"></i><i className="fa-solid fa-dog"></i> </NavLink></li>
       <li><NavLink to="/pets/new"><i className="fa-solid fa-file-pen"></i></NavLink></li>
       <li><NavLink to='/' onClick={handleLogout}><i className='fas fa-solid fa-door-open fa-2x'></i></NavLink> </li>
     </ul>
