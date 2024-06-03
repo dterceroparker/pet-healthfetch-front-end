@@ -40,14 +40,14 @@ async function create(petFormData, photoData) {
     console.log("JSON FROM PETSERVICE.CREATE", {json})
     if (json.err) throw new Error(json.err)
 
-    if (json.token) {
-      tokenService.setToken(json.token)
-
-      if (photoData) {
-        console.log("CALLING ADDPHOTO WITH", {photoData, id: json._id})
-        await addPhoto(photoData, json._id)
-      }
+    if (photoData) {
+      console.log("CALLING ADDPHOTO WITH", {photoData, id: json._id})
+      await addPhoto(photoData, json._id)
     }
+    // if (json.token) {
+    //   tokenService.setToken(json.token)
+
+    // }
     return json
   } catch (error) {
     console.log(error)
