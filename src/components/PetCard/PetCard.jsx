@@ -18,6 +18,9 @@ const PetCard = ({ pet }) => {
           <OwnerInfo content={pet} />
         </header>
         <p>Elixir: {pet.elixir}</p>
+        <div>
+        <img src={pet.photo} alt="pet's photo" />
+        </div>
       </article>
     </NavLink>
   )

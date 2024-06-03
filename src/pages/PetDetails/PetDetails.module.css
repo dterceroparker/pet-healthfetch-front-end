@@ -37,8 +37,14 @@
   box-shadow: 5px 5px 5px rgba(246, 255, 0, 0.26);
 }
 
+.container div img {
+  height: 300px;
+  width: 300px;
+  background-color: #d6eadf;
+}
+
 .container:hover {
-  border-color: #d2e013;
+  border-color: #e01313;
 }
 
 .scroller {

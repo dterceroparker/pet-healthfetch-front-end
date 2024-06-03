@@ -44,10 +44,6 @@ async function create(petFormData, photoData) {
       console.log("CALLING ADDPHOTO WITH", {photoData, id: json._id})
       await addPhoto(photoData, json._id)
     }
-    // if (json.token) {
-    //   tokenService.setToken(json.token)
-
-    // }
     return json
   } catch (error) {
     console.log(error)
