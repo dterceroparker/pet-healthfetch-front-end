@@ -103,6 +103,22 @@ async function deletePhoto(photoIdx, petId) {
   }
 }
 
+async function createVisit(petId, visitFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${petId}/visits`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(visitFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
@@ -110,4 +126,6 @@ export {
   update,
   addPhoto,
   deletePhoto,
+
+  createVisit,
 }
