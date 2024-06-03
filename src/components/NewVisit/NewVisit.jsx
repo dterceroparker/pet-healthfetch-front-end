@@ -48,6 +48,7 @@ const NewVisit = (props) => {
           type="text" 
           name="visitReason"
           id="visitReason-input"
+          style={{ margin: '10px' }}
           placeholder="Visit Reason"
           value={formData.visitReason}
           onChange={handleChange}
@@ -58,6 +59,7 @@ const NewVisit = (props) => {
           type="datetime-local"
           name="visitDate"
           id="visitDate-input"
+          style={{ margin: '10px' }}
           value={formData.visitDate} // Use formData.visitDate for initial value
           onChange={handleChange} // Pass handleChange function as event handler
         />
@@ -66,10 +68,15 @@ const NewVisit = (props) => {
           type="checkbox"
           name="urgent"
           id="urgent-checkbox"
+          style={{ margin: '10px' }}
           checked={formData.urgent}  // Directly use formData.urgent for checked state
           onChange={handleCheckBox}  // Pass handleCheckBox function as the event handler
         />
-      <button type="submit"><Icon category="Create" /></button>
+      <button 
+        type="submit"
+        style={{height: '7px', width: '10px'}}
+        >
+          <Icon category="Create" /></button>
     </form>
     </>
   )
