@@ -52,7 +52,7 @@ const NewPet = ({ handleAddPet }) => {
 
   const handleChange = evt => {
     setMessage('')
-    setFormData({...formData, [evt.target.name]: evt.target.value})
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
   const handleNavigateHome = () => {

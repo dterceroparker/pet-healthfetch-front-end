@@ -47,7 +47,7 @@ function App() {
   }, [user])
 
   const handleAddPet = async (petFormData, photoData) => {
-    console.log("handleAddPet", {petFormData})
+    console.log({petFormData, photoData})
     const newPet = await petService.create(petFormData, photoData)
     console.log({newPet})
     setPets([newPet, ...pets])

@@ -29,7 +29,7 @@ const Profiles = () => {
       {profiles.map(profile => (
       <>
       <p key={profile._id}>{profile.name}</p>
-        <img src={profile.photo} alt="Profile Picture" />
+      <img src={profile.photo} alt="Profile Picture" />
       </>
       ))}
     </main>

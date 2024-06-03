@@ -27,6 +27,7 @@ async function show(petId) {
 
 async function create(petFormData, photoData) {
   try {
+    console.log("PETSERVICE.CREATE", {petFormData, photoData})
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {
@@ -35,15 +36,15 @@ async function create(petFormData, photoData) {
       },
       body: JSON.stringify(petFormData)
     })
-    console.log({res})
     const json = await res.json()
-    console.log({json})
+    console.log("JSON FROM PETSERVICE.CREATE", {json})
     if (json.err) throw new Error(json.err)
 
     if (json.token) {
       tokenService.setToken(json.token)
 
       if (photoData) {
+        console.log("CALLING ADDPHOTO WITH", {photoData, id: json._id})
         await addPhoto(photoData, json._id)
       }
     }
@@ -71,9 +72,10 @@ async function update(petFormData) {
 
 async function addPhoto(photoData, petId) {
   try {
+    console.log("INSIDE ADDPHOTO WITH", {photoData, petId})
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
-    console.log(photoFormData)
+    console.log("GOING TO SEND TO BACKEND", {photoFormData, petId})
     const res = await fetch(`${BASE_URL}/${petId}/add-photo`, {
       method: 'PUT',
       headers: {
@@ -81,7 +83,11 @@ async function addPhoto(photoData, petId) {
       },
       body: photoFormData,
     })
-    return res.json()
+    const json = res.json();
+
+    console.log("RESULT OF ADDPHOTO", {json})
+
+    return json
   } catch (err) {
     throw new Error(err)
   }
