@@ -8,6 +8,7 @@ import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
 import Icon from '../../components/Icon/Icon'
 import NewVisit from '../../components/NewVisit/NewVisit'
+import Visits from '../../components/Visits/Visits'
 
 // css
 import styles from './PetDetails.module.css'
@@ -66,12 +67,19 @@ const PetDetails = (props) => {
         </span>
       </article>
       <section className={styles.visit}>
-        <NavLink to='/visits'>
-          <button type="submit">
+        <h2>Visits</h2>
+        {/* <NavLink to='/visits' > */}
+          {/* <button onClick={handleAddVisit} type="submit"> New Visit Button */}
             {/* <Icon category="Create" /> */}
           <NewVisit handleAddVisit={handleAddVisit} />
-          </button>
-        </NavLink>
+          <Visits
+          petId={petId}
+          user={props.user}
+          visits={pet.visits}
+          // handleDeleteVisit={handleDeleteVisit}
+        />
+          {/* </button> */}
+        {/* </NavLink> */}
 
       </section>
     </main>
