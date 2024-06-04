@@ -34,7 +34,7 @@ const PetDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
-      <div key={pet.photo} >
+      <div className={styles.petPhoto} key={pet.photo} >
         <img  src={pet.photo} alt="A photo of this puppy" />
       </div>
     {/* {user.profile === pet.owner &&  */}

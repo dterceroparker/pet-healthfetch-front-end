@@ -10,3 +10,14 @@
   /* margin-right: 2px; */
   /* margin-left: -2px; */
 }
+
+/* DateCard.module.css */
+.container {
+  /* ... previous styles */
+  transition: background-color 0.2s ease-in-out; /* Enables smooth transition */
+}
+
+.container:hover {
+  background-color: #e8e8e8; /* Slightly darker shade on hover */
+  cursor: default; /* Maintain default cursor style */
+}

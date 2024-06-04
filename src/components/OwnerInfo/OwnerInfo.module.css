@@ -16,6 +16,11 @@
   margin-right: 12px;
   border-radius: 50%;
   /* background-color: rgb(102, 116, 238); */
+
+  width: 60px; /* Set a fixed width for the image */
+  height: 60px;
+  border-radius: 50%; /* Create a circular image */
+  object-fit: cover; /* Ensure image fills the container */
 }
 
 .container h4 {
@@ -25,4 +30,35 @@
 .container section {
   display: flex;
   flex-direction: column;
+}
+
+
+/* OwnerInfo.module.css */
+
+/* Base styles for the container */
+.container {
+  display: flex; /* Arrange image and info section side-by-side */
+  align-items: center; /* Vertically center content */
+  padding: 1rem; /* Add some padding for spacing */
+  border-radius: 4px; /* Add a slight roundness to the corners */
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+/* Styles for the user avatar image */
+.container .ownerImage {
+  width: 60px; /* Set a fixed width for the image */
+  height: 60px;
+  border-radius: 50%; /* Create a circular image */
+  object-fit: cover; /* Ensure image fills the container */
+}
+
+/* Styles for the owner's name heading */
+.container .ownerName {
+  font-weight: bold; /* Make the name bold for emphasis */
+  margin-bottom: 0.5rem; /* Add some margin below the name */
+}
+
+/* Styles for the section containing name and date */
+.container .ownerInfoSection {
+  margin-left: 1rem; /* Add some margin to separate from the image */
 }

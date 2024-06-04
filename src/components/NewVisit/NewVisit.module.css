@@ -66,28 +66,29 @@ input:checked::before {
   min-height: 50px;
 }
 
-.container button {
+.container .submitButton {
   margin: 0;
   color: white;
   font-weight: 600;
   background: #00a0df;
 }
 
-.container button[type="submit"] {
-  width: 40px;
-  height: 40px;
+.container .submitButton {
+  width: 10px;
+  height: 20px;
   display: flex;
-  margin-left: 14px;
-  border-radius: 50%;
+  margin: 10px;
+  /* border-radius: 50%; */
   align-items: center;
   justify-content: center;
 }
 
-.container button[type="submit"]:hover {
+.container .submitButton:hover {
   cursor: pointer;
+  background-color: #007a7e;
 }
 
-.container button[type="submit"] img {
+.container .submitButton img {
   width: 18px;
   height: 18px;
 }

@@ -43,10 +43,19 @@
   box-shadow: 5px 5px 5px rgba(246, 255, 0, 0.26);
 }
 
-.container div img {
+.container .petPhoto {
   height: 300px;
   width: 300px;
-  background-color: #d6eadf;
+  background-color: #d6eadf00;
+}
+
+.container .petPhoto img {
+  /* Option 1: Using width and height */
+  height: 100%;
+  width: auto;
+
+  /* Option 2: Using object-fit */
+  object-fit: cover;
 }
 
 .container:hover {
@@ -263,4 +272,6 @@
 .container header button:active {
   background-color: rgb(190, 190, 190);
 }
+
+
 

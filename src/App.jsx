@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PetList from './pages/PetList/PetList'
 import PetDetails from './pages/PetDetails/PetDetails'
 import NewPet from './pages/NewPet/NewPet'
+import EditPet from './pages/EditPet/EditPet'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -117,6 +118,14 @@ function App() {
               handleAddPet={handleAddPet}
               // handleAddPhoto={handleAddPhoto}
               />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pets/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditPet />
             </ProtectedRoute>
           }
         />

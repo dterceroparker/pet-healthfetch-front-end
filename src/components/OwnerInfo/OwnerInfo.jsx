@@ -10,14 +10,14 @@ const OwnerInfo = ({ content }) => {
 console.log({content})
 const photo = content.owner.photo ? content.owner.photo : profileIcon
 console.log({photo})
-  return (
-    <div className={styles.container}>
-      <img src={photo} alt="The user's avatar" />
-      <section>
-        <h4>{content.owner.name}</h4>
-        <DateCard createdAt={content.createdAt} />
-      </section>
-    </div>
+return (
+  <div className={styles.container}>
+    <img src={photo} alt="The user's avatar" className={styles.ownerImage} />
+    <section className={styles.ownerInfoSection}>
+      <h4 className={styles.ownerName}>{content.owner.name}</h4>
+      <DateCard createdAt={content.createdAt} />
+    </section>
+  </div>
   )
 }
 

@@ -56,6 +56,7 @@ const NewVisit = (props) => {
         <label htmlFor="visitDate-input">Visit Date</label>
 				<input
           required
+          // allows users to select both date and time
           type="datetime-local"
           name="visitDate"
           id="visitDate-input"
@@ -74,7 +75,7 @@ const NewVisit = (props) => {
         />
       <button 
         type="submit"
-        style={{height: '7px', width: '10px'}}
+        className={styles.submitButton}
         >
           <Icon category="Create" /></button>
     </form>
