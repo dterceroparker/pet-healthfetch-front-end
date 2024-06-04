@@ -52,6 +52,7 @@ async function create(petFormData, photoData) {
 
 async function update(petFormData) {
   try {
+    console.log("first update", {petFormData: petFormData})
     const res = await fetch(`${BASE_URL}/${petFormData._id}`, {
       method: 'PUT',
       headers: {

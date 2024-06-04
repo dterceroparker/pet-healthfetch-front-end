@@ -55,6 +55,12 @@ function App() {
     navigate('/pets')
   }
 
+  const handleUpdatePet = async formData => {
+    const updatedPet = await petService.update(formData)
+    setPets(pets.map(pet => pet._id === updatedPet._id ? updatedPet : pet))
+    navigate('/pets')
+  }
+
   // const handleAddPhoto = async (photoData, petId) => {
   //   const newPet = await petService.addPhoto(photoData, petId)
   //   setPets(pets.map(pet => pet._id === newPet._id ? newPet : pet))
@@ -125,7 +131,7 @@ function App() {
           path="/pets/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditPet />
+              <EditPet handleUpdatePet={handleUpdatePet}/>
             </ProtectedRoute>
           }
         />
