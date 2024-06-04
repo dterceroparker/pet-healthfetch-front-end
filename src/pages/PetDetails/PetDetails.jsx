@@ -33,58 +33,57 @@ const PetDetails = (props) => {
 
   if (!pet) return <Loading />
 
-  return ( 
+  return (
     <main className={styles.container}>
+      {pet.owner && props.user && pet.owner._id === props.user.profile ? ( 
+      <>
       <div className={styles.petPhoto} key={pet.photo} >
-        <img  src={pet.photo} alt="A photo of this puppy" />
+        <img src={pet.photo} alt="A photo of this puppy" />
       </div>
-    {/* {user.profile === pet.owner &&  */}
       <article>
         <header>
           <OwnerInfo content={pet} />
           <h1>Pet Information:</h1>
         </header>
-        <h5>Name: {pet.name.toUpperCase()}</h5>
-        <h5>Phone Number: {pet.phone}</h5>
-        <h5>Address: {pet.address}</h5>
-        <h5>DOB: {new Date(pet.birthDate).toLocaleDateString()}</h5>
-        <h5>Breed: {pet.breed}</h5>
-        <h5>Color: {pet.color}</h5>
-        <h5>Sex: {pet.sex}</h5>
-        <h5>Elixir: {pet.elixir}</h5>
-        <h5>Medical History: {pet.medicalHistory}</h5>
-        <h5>Medications: {pet.medications}</h5>
-        <h5>Allergies: {pet.allergies}</h5>
-        <h5>Vet Name: {pet.vetName}</h5>
+          <h5>Name: {pet.name.toUpperCase()}</h5>
+          <h5>Phone Number: {pet.phone}</h5>
+          <h5>Address: {pet.address}</h5>
+          <h5>DOB: {new Date(pet.birthDate).toLocaleDateString()}</h5>
+          <h5>Breed: {pet.breed}</h5>
+          <h5>Color: {pet.color}</h5>
+          <h5>Sex: {pet.sex}</h5>
+          <h5>Elixir: {pet.elixir}</h5>
+          <h5>Medical History: {pet.medicalHistory}</h5>
+          <h5>Medications: {pet.medications}</h5>
+          <h5>Allergies: {pet.allergies}</h5>
+          <h5>Vet Name: {pet.vetName}</h5>
         <span>
-          {pet.owner._id === props.user.profile &&
-            <>
-              <NavLink to='/pets/edit' state={pet}>
-                <Icon category='Edit' className={styles.editBtn} />
-              </NavLink> 
-            </>
-            }
+          <NavLink to='/pets/edit' state={pet}>
+            <Icon category='Edit' className={styles.editBtn} />
+          </NavLink> 
         </span>
-      </article>
-      <section className={styles.visit}>
-        <h2>Visits</h2>
+        </article>
+        <section className={styles.visit}>
+          <h2>Visits</h2>
         {/* <NavLink to='/visits' > */}
           {/* <button onClick={handleAddVisit} type="submit"> New Visit Button */}
             {/* <Icon category="Create" /> */}
           <NewVisit handleAddVisit={handleAddVisit} />
           <Visits
-          petId={petId}
-          user={props.user}
-          visits={pet.visits}
+            petId={petId}
+            user={props.user}
+            visits={pet.visits}
           // handleDeleteVisit={handleDeleteVisit}
-        />
+          />
           {/* </button> */}
         {/* </NavLink> */}
-
-      </section>
+        </section>
+        </>
+      ) : (
+        <p>Unauthorized Access. You are not the owner of this pet.</p>
+      )}
     </main>
   )
 }
-
 
 export default PetDetails

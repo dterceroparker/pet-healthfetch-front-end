@@ -8,16 +8,15 @@ import styles from './PetList.module.css'
 
 
 const PetList = (props) => {
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 console.log({props: props.pets})
-  return ( 
+  
+return (
     <main className={styles.container}>
       <h1>PET MEMBERS</h1>
       {!props.pets.length && <h2>Oops! No pets here!</h2>}
-
       <ul>
         {props.pets.map(pet =>
           <PetCard 
