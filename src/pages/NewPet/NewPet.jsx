@@ -2,17 +2,12 @@
 import { useState, useRef } from 'react'
 import { useNavigate } from "react-router-dom"
 
-
-//services
-// import * as petService from '../../services/petService'
-
 // css
 import styles from './NewPet.module.css'
 
 const NewPet = ({ handleAddPet }) => {
   const navigate = useNavigate()
   const imgInputRef = useRef(null)
-  // const { petId } = useParams()
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     photo: '',
@@ -40,9 +35,6 @@ const NewPet = ({ handleAddPet }) => {
       setIsSubmitted(true)
       console.log({photoData})
       await handleAddPet(formData, photoData.photo)
-      // await petService.create(formData, photoData.photo)
-      // navigate('/')
-      // imgInputRef.current.value = null
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -113,7 +105,7 @@ const NewPet = ({ handleAddPet }) => {
           name="phone"
           id="phone-input"
           value={formData.phone}
-          placeholder="Phone"
+          placeholder="Please use XXX-XXX-XXXX format"
           onChange={handleChange}
         />
         <label htmlFor="address-input">Address</label>
@@ -123,7 +115,7 @@ const NewPet = ({ handleAddPet }) => {
           name="address"
           id="address-input"
           value={formData.address}
-          placeholder="Address"
+          placeholder="Please include street, city, state, and zip code."
           onChange={handleChange}
         />
         <label htmlFor="birthDate-input">Birthdate</label>

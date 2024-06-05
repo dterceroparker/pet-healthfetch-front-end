@@ -1,11 +1,10 @@
-//npm imports
-import { useState } from 'react'
+import { useState } from 'react';
 
 // css
-import styles from './NewVisit.module.css'
+import styles from './NewVisit.module.css';
 
 // components
-import Icon from "../Icon/Icon"
+import Icon from '../Icon/Icon';
 
 const NewVisit = (props) => {
   const [formData, setFormData] = useState({
@@ -13,13 +12,12 @@ const NewVisit = (props) => {
     visitReason: '',
     visitDate: '',
     urgent: false,
-  })
+  });
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
+    setFormData({ ...formData, [evt.target.name]: evt.target.value });
+  };
 
-  
   const handleSubmit = (evt) => {
     evt.preventDefault()
     props.handleAddVisit(formData)
@@ -41,11 +39,11 @@ const NewVisit = (props) => {
   return (
     <>
       <h1>New Visit</h1>
-    <form autoComplete="off" className={styles.container} onSubmit={handleSubmit}>
-      <label htmlFor="visitReason-input">Visit Reason</label>
+      <form autoComplete="off" className={styles.container} onSubmit={handleSubmit}>
+        <label htmlFor="visitReason-input">Visit Reason</label>
         <input
           required
-          type="text" 
+          type="text"
           name="visitReason"
           id="visitReason-input"
           style={{ margin: '10px' }}
@@ -54,15 +52,15 @@ const NewVisit = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="visitDate-input">Visit Date</label>
-				<input
+        <input
           required
           // allows users to select both date and time
           type="datetime-local"
           name="visitDate"
           id="visitDate-input"
           style={{ margin: '10px' }}
-          value={formData.visitDate} // Use formData.visitDate for initial value
-          onChange={handleChange} // Pass handleChange function as event handler
+          value={formData.visitDate}
+          onChange={handleChange}
         />
         <label htmlFor="urgent-input">Is Visit Urgent?</label>
         <input
@@ -70,17 +68,15 @@ const NewVisit = (props) => {
           name="urgent"
           id="urgent-checkbox"
           style={{ margin: '10px' }}
-          checked={formData.urgent}  // Directly use formData.urgent for checked state
-          onChange={handleCheckBox}  // Pass handleCheckBox function as the event handler
+          checked={formData.urgent}
+          onChange={handleCheckBox}
         />
-      <button 
-        type="submit"
-        className={styles.submitButton}
-        >
-          <Icon category="Create" /></button>
-    </form>
+        <button type="submit" className={styles.submitButton} >
+          <Icon category="Create" />
+        </button>
+      </form>
     </>
-  )
-}
+  );
+};
 
-export default NewVisit
+export default NewVisit;

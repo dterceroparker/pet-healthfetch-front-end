@@ -62,22 +62,18 @@ const PetDetails = (props) => {
             <Icon category='Edit' className={styles.editBtn} />
           </NavLink> 
         </span>
-        </article>
-        <section className={styles.visit}>
-          <h2>Visits</h2>
-        {/* <NavLink to='/visits' > */}
-          {/* <button onClick={handleAddVisit} type="submit"> New Visit Button */}
-            {/* <Icon category="Create" /> */}
-          <NewVisit handleAddVisit={handleAddVisit} />
-          <Visits
-            petId={petId}
-            user={props.user}
-            visits={pet.visits}
-          // handleDeleteVisit={handleDeleteVisit}
-          />
-          {/* </button> */}
-        {/* </NavLink> */}
-        </section>
+      </article>
+      <section className={styles.newVisit}>
+        <h2>Visits</h2>
+        <NewVisit handleAddVisit={handleAddVisit} />
+      </section>
+      <p className={styles.visits}>
+        <Visits
+          petId={petId}
+          user={props.user}
+          visits={pet.visits}
+        />
+      </p>
         </>
       ) : (
         <p>Unauthorized Access. You are not the owner of this pet.</p>
