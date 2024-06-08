@@ -12,6 +12,7 @@ import PetList from './pages/PetList/PetList'
 import PetDetails from './pages/PetDetails/PetDetails'
 import NewPet from './pages/NewPet/NewPet'
 import EditPet from './pages/EditPet/EditPet'
+import NewVisit from './pages/NewVisit/NewVisit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -61,11 +62,10 @@ function App() {
     navigate('/pets')
   }
 
-  // const handleAddPhoto = async (photoData, petId) => {
-  //   const newPet = await petService.addPhoto(photoData, petId)
-  //   setPets(pets.map(pet => pet._id === newPet._id ? newPet : pet))
-  //   navigate(`/pets/${petId}`)
-  // }
+  const handleAddVisit = async (visitFormData, petId) => {
+    await petService.createVisit(petId, visitFormData)
+    navigate(`/pets/${petId}`)
+  }
 
   return (
     <>
@@ -132,6 +132,16 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditPet handleUpdatePet={handleUpdatePet}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pets/:petId/visits/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewVisit 
+              handleAddVisit={handleAddVisit}
+              />
             </ProtectedRoute>
           }
         />

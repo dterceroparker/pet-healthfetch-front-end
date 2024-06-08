@@ -14,16 +14,30 @@ async function index() {
   }
 }
 
+// async function show(petId) {
+//   try {
+//     const res = await fetch(`${BASE_URL}/${petId}`, {
+//       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+//     })
+//     return res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
 async function show(petId) {
   try {
     const res = await fetch(`${BASE_URL}/${petId}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
     })
-    return res.json()
+    const json = await res.json()
+    console.log("API response for pet details:", json) // Log the entire response
+    return json
   } catch (error) {
-    console.log(error)
+    console.log("Error fetching pet details:", error) // Log the error details
   }
 }
+
 
 async function create(petFormData, photoData) {
   try {
@@ -90,20 +104,6 @@ async function addPhoto(photoData, petId) {
   }
 }
 
-async function deletePhoto(photoIdx, petId) {
-  try {
-    const res = await fetch(`${BASE_URL}/${petId}/delete-photo/${photoIdx}`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`
-      },
-    })
-    return await res.json()
-  } catch (err) {
-    throw new Error(err)
-  }
-}
-
 async function createVisit(petId, visitFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${petId}/visits`, {
@@ -126,7 +126,6 @@ export {
   create,
   update,
   addPhoto,
-  deletePhoto,
 
   createVisit,
 }

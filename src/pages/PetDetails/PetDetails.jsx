@@ -7,7 +7,6 @@ import * as petService from '../../services/petService'
 import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
 import Icon from '../../components/Icon/Icon'
-import NewVisit from '../../components/NewVisit/NewVisit'
 import Visits from '../../components/Visits/Visits'
 
 // css
@@ -26,10 +25,7 @@ const PetDetails = (props) => {
     fetchPet()
   }, [petId])
 
-  const handleAddVisit = async (visitFormData) => {
-    const newVisit = await petService.createVisit(petId, visitFormData)
-    setPet({ ...pet, visits: [...pet.visits, newVisit] })
-  } 
+
 
   if (!pet) return <Loading />
 
@@ -64,19 +60,25 @@ const PetDetails = (props) => {
         </span>
       </article>
       <section className={styles.newVisit}>
-        <h2>Visits</h2>
-        <NewVisit handleAddVisit={handleAddVisit} />
+        <NavLink to='/pets/:petId/visits/new'> <button>
+          Add Visit
+        </button>
+        {/* <NewVisit handleAddVisit={handleAddVisit} /> */}
+        </NavLink>
       </section>
-      <p className={styles.visits}>
+      <section className={styles.visits}>
+        <h2>Visits</h2>
         <Visits
           petId={petId}
           user={props.user}
           visits={pet.visits}
         />
-      </p>
+      </section>
         </>
       ) : (
-        <p>Unauthorized Access. You are not the owner of this pet.</p>
+      <p>Unauthorized Access. You are not the owner of this pet.
+        <NavLink to='/pets'> <button>Back</button> </NavLink>
+      </p>
       )}
     </main>
   )

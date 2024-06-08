@@ -38,14 +38,14 @@ input:checked {
   position: relative;
 }
 
-input:checked::before {
+/* input:checked::before {
   content: "2714";
   font-size: 1.5em;
   color: #fff;
   position: absolute;
   right: 1px;
   top: -5px;
-}
+} */
 
 .container h3 {
   margin: 0;
