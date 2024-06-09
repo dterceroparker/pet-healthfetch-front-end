@@ -12,15 +12,15 @@ const PetCard = ({ pet }) => {
     <NavLink to={`/pets/${pet._id}`}>
       <article className={styles.container}>
         <header>
-          <span>
-            <h1>{pet.name.toUpperCase()}</h1>
-          </span>
           <OwnerInfo content={pet} />
-        </header>
-        <p>Elixir: {pet.elixir}</p>
-        <div>
-          <img src={pet.photo} alt="pet's photo" />
-        </div>
+          </header>
+        <section className={styles.petDetails}> {/* Added section for pet details */}
+          <h2>{pet.name.toUpperCase()}</h2>
+          <p>Elixir: {pet.elixir}</p>
+          <div>
+            <img src={pet.photo} alt="pet's photo" />
+          </div>
+        </section>
       </article>
     </NavLink>
   )

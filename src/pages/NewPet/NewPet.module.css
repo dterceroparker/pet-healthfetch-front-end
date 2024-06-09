@@ -11,6 +11,21 @@
 }
 
 
+.container form {
+  display: flex;
+  align-items: center; /* Align label and input vertically */
+  margin-bottom: 15px;
+}
+
+.container input,
+.container select {
+  flex: 1; /* Allows input to fill remaining space */
+  padding: 10px;
+  border: 1px solid #f3c305ea;
+  border-radius: 4px;
+  margin-left: 10px; /* Adds some space between label and input */
+}
+
 
 input,
 textarea,
@@ -29,8 +44,10 @@ button {
 }
 
 label {
+  display:block;
+  margin-bottom: 15px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 600;  /* Assuming you want the same font style */
 }
 
 input:focus,

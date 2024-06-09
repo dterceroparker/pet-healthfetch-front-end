@@ -115,7 +115,7 @@ const NewPet = ({ handleAddPet }) => {
           name="address"
           id="address-input"
           value={formData.address}
-          placeholder="Please include street, city, state, and zip code."
+          placeholder="Please include street, city, state, and zip code"
           onChange={handleChange}
         />
         <label htmlFor="birthDate-input">Birthdate</label>

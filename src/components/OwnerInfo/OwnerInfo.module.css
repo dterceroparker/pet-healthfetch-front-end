@@ -41,7 +41,7 @@
   align-items: center; /* Vertically center content */
   padding: 1rem; /* Add some padding for spacing */
   border-radius: 4px; /* Add a slight roundness to the corners */
-  background-color: #f5f5f5; /* Light gray background */
+  /* background-color: #f5f5f5; Light gray background */
 }
 
 /* Styles for the user avatar image */

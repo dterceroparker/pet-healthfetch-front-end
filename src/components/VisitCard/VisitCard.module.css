@@ -1,0 +1,34 @@
+
+
+.container {
+  display: flex; /* Allow for potential future expansion */
+  flex-direction: column; /* Stack elements vertically */
+  padding: 20px; /* Add some padding for content breathing room */
+  border-radius: 4px; /* Subtle rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  background-color: #ece6e63d; /* White background */
+  margin-bottom: 20px; /* Add spacing between cards */
+}
+
+.container h1 {
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold;
+  margin-bottom: 10px; /* Add some space between heading and content */
+}
+
+.container section {
+  display: flex; /* Arrange content horizontally */
+  flex-direction: column; /* Stack content vertically by default */
+  gap: 10px; /* Add spacing between content elements */
+}
+
+.container section p {
+  font-size: 16px; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin for better spacing */
+}
+
+/* Optional: Styling for urgency indicator */
+
+.container section p.urgent {
+  color: red; /* Highlight urgent visits */
+}

@@ -25,22 +25,21 @@ const PetDetails = (props) => {
     fetchPet()
   }, [petId])
 
-
-
   if (!pet) return <Loading />
 
   return (
     <main className={styles.container}>
       {pet.owner && props.user && pet.owner._id === props.user.profile ? ( 
       <>
-      <div className={styles.petPhoto} key={pet.photo} >
+      <header>
+        <OwnerInfo content={pet} />
+      </header>
+      <h1>Pet Information</h1>
+      <div className={styles.petPhoto} 
+        key={pet.photo} >
         <img src={pet.photo} alt="A photo of this puppy" />
       </div>
       <article>
-        <header>
-          <OwnerInfo content={pet} />
-          <h1>Pet Information:</h1>
-        </header>
           <h5>Name: {pet.name.toUpperCase()}</h5>
           <h5>Phone Number: {pet.phone}</h5>
           <h5>Address: {pet.address}</h5>
@@ -58,16 +57,16 @@ const PetDetails = (props) => {
             <Icon category='Edit' className={styles.editBtn} />
           </NavLink> 
         </span>
-      </article>
-      <section className={styles.newVisit}>
-        <NavLink to='/pets/:petId/visits/new'> <button>
-          Add Visit
-        </button>
-        {/* <NewVisit handleAddVisit={handleAddVisit} /> */}
-        </NavLink>
-      </section>
-      <section className={styles.visits}>
+      </article >
+      <article className={styles.newVisits}> 
         <h2>Visits</h2>
+      <span >
+        <NavLink to='/pets/:petId/visits/new'> 
+          <Icon category='Create' className={styles.createBtn} />
+        </NavLink>
+      </span>
+      </article>
+      <section className={styles.visits}>
         <Visits
           petId={petId}
           user={props.user}
@@ -76,9 +75,12 @@ const PetDetails = (props) => {
       </section>
         </>
       ) : (
-      <p>Unauthorized Access. You are not the owner of this pet.
-        <NavLink to='/pets'> <button>Back</button> </NavLink>
-      </p>
+        <div className={styles.accessSection}>
+        <p>Unauthorized Access. You are not the owner of this pet.</p>
+        <NavLink to='/pets'> 
+          <button className={styles.returnBtn}>Return</button> 
+        </NavLink>
+        </div>
       )}
     </main>
   )
