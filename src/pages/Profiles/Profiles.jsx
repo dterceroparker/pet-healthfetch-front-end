@@ -26,14 +26,22 @@ const Profiles = () => {
   return (
     <main className={styles.container}>
       <h1>Pet Parents</h1>
-      {profiles.map(profile => (
-      <>
-      <p key={profile._id}>{profile.name}</p>
-      <img src={profile.photo} alt="Profile Picture" />
-      </>
-      ))}
+      {profiles.length ? (
+        <section className={styles.profiles}>
+          {/* Map over profiles to display cards */}
+          {profiles.map(profile => (
+            <article key={profile._id} className={styles.profile}>
+              <img src={profile.photo} alt="Profile Picture" />
+              <p>{profile.name}</p>
+            </article>
+          ))}
+        </section>
+      ) : (
+        <p>No profiles found.</p>
+      )}
     </main>
   )
 }
+
 
 export default Profiles

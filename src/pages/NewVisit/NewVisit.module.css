@@ -1,4 +1,10 @@
 .container {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: stretch; /* Stretch elements horizontally to fill container width */
+
+  
   padding: 0;
   display: flex;
   border: none;

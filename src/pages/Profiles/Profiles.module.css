@@ -1,20 +1,88 @@
+/* Profiles.module.css */
+
+/* Container for the entire profiles section */
 .container {
+  overflow-y: auto; 
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 80px;
+  width: 100%; 
+  margin: 0 auto; 
+  padding: 21px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 14px;
+  height: 900px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-.container > p {
-  margin: 8px;
-  color: rgb(0, 0, 0);
-  font-weight: 700;
-  font-size: 1rem;
+.container::-webkit-scrollbar {
+  width: 10px;
+  background-color: red;
+}
+/* Styles for the heading and loading message */
+.container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* Center heading within container */
+}
+
+/* Styles for individual profile elements */
+ .profiles {
+  width: 300px; /* Adjust width as needed */
+  background-color: #254ef325; /* White background for cards */
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(30, 63, 229, 0.924); /* Subtle shadow for cards */
+  overflow: hidden; /* Clip image within card boundaries */
+  display: flex; /* Allow stacking elements side-by-side */
+}
+
+.profiles img {
+  width: 100%; /* Adjust width for photo as needed */
+  height: 200px; /* Set image height */
+  object-fit: cover; /* Ensure image fills card width and height proportionally */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect for image */
+}
+
+.profiles p {
+  width: 50%; /* Adjust width for paragraph as needed */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px; /* Padding around name */
+  text-align: left; /* Align text within paragraph */
+}
+
+.profiles:hover {
+  transform: scale(1.02); /* Slight card zoom on hover */
+}
+
+.profiles:hover img {
+  transform: scale(1.05); /* Increased image zoom on hover (layered effect) */
+}
+
+
+.container {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+}
+
+.container * {
+  /* margin: 0; */
 }
 
 .container img {
-  width: 12%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10%;
+  /* width: 32px; */
+  /* height: auto; */
+  /* object-fit: cover; */
+  /* margin-right: 12px; */
+  /* border-radius: 50%; */
+  
+}
+
+
+
+.container section {
+  display: flex;
+  flex-direction: column;
 }
