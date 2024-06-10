@@ -56,15 +56,20 @@ function App() {
     navigate('/pets')
   }
 
-  const handleUpdatePet = async formData => {
-    const updatedPet = await petService.update(formData)
-    setPets(pets.map(pet => pet._id === updatedPet._id ? updatedPet : pet))
+  const handleUpdatePet = async (petFormData) => {
+    const updatedPet = await petService.update(petFormData)
+    setPets(pets.map((pet) => updatedPet._id === pet._id ? updatedPet : pet))
     navigate('/pets')
   }
 
-  const handleAddVisit = async (visitFormData, petId) => {
-    await petService.createVisit(petId, visitFormData)
-    navigate(`/pets/${petId}`)
+  const handleAddVisit = async (visitFormData, petId, photoData) => {
+    try {
+      await petService.createVisit(visitFormData, petId, photoData)
+      navigate(`/pets/${petId}`)
+    } catch (error) {
+      console.error('Error adding visit:', error)
+      // Display an error message to the user
+    }
   }
 
   return (

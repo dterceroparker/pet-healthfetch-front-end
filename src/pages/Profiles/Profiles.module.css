@@ -61,15 +61,6 @@
 }
 
 
-.container {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: flex-start; */
-}
-
-.container * {
-  /* margin: 0; */
-}
 
 .container img {
   /* width: 32px; */

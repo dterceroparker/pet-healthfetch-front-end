@@ -30,13 +30,20 @@ async function show(petId) {
     const res = await fetch(`${BASE_URL}/${petId}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
     })
+     // Check for successful response status code (e.g., 200 OK)
+      if (!res.ok) {
+      throw new Error(`Error fetching pet details: ${res.status}`)
+    }
+
     const json = await res.json()
-    console.log("API response for pet details:", json) // Log the entire response
+    console.log("API response for pet details:", json) // Log the entire response (for debugging)
     return json
   } catch (error) {
-    console.log("Error fetching pet details:", error) // Log the error details
+    console.error("Error fetching pet details:", error) // Log the error details
+    throw error; // Re-throw the error for handling in the calling component
   }
 }
+
 
 async function create(petFormData, photoData) {
   try {
