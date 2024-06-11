@@ -61,7 +61,7 @@ const PetDetails = (props) => {
       <article className={styles.newVisits}> 
         <h2>Visits</h2>
       <span >
-        <NavLink to='/pets/:petId/visits/new'> 
+        <NavLink to={`/pets/${petId}/visits/new`}> 
           <Icon category='Create' className={styles.createBtn} />
         </NavLink>
       </span>

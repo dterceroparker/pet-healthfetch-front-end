@@ -63,8 +63,10 @@ function App() {
   }
 
   const handleAddVisit = async (visitFormData, petId, photoData) => {
+    console.log("** Adding visit for pet ID:**", petId)
     try {
       await petService.createVisit(visitFormData, petId, photoData)
+      console.log("** Adding visit for pet")
       navigate(`/pets/${petId}`)
     } catch (error) {
       console.error('Error adding visit:', error)
@@ -106,10 +108,12 @@ function App() {
           }
         />
         <Route
-          path="/pets"
+          path="/pets/:petId/visits/new"
           element={
             <ProtectedRoute user={user}>
-              <PetList pets={pets} />
+              <NewVisit 
+              handleAddVisit={handleAddVisit}
+              />
             </ProtectedRoute>
           }
         />
@@ -141,12 +145,10 @@ function App() {
           }
         />
         <Route
-          path="/pets/:petId/visits/new"
+          path="/pets"
           element={
             <ProtectedRoute user={user}>
-              <NewVisit 
-              handleAddVisit={handleAddVisit}
-              />
+              <PetList pets={pets} />
             </ProtectedRoute>
           }
         />

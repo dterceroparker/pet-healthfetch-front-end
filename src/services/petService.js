@@ -110,8 +110,9 @@ async function addPhoto(photoData, petId) {
   }
 }
 
-async function createVisit(petId, visitFormData, photoData) {
+async function createVisit(visitFormData, petId, photoData) {
   try {
+    console.log("** Provided createVisit pet ID:**", petId)
     const res = await fetch(`${BASE_URL}/${petId}/visits`, {
       method: 'POST',
       headers: {
