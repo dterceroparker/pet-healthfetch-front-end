@@ -25,21 +25,31 @@ const PetDetails = (props) => {
     fetchPet()
   }, [petId])
 
+  const handleDeleteVisit = async (petId, visitId) => {
+    // deleteComment service call will go here
+    await petService.deleteVisit(petId, visitId)
+    setPet({ ...pet, visits: pet.visits.filter((v) => v._id !== visitId) })
+  }
+
   if (!pet) return <Loading />
 
   return (
     <main className={styles.container}>
       {pet.owner && props.user && pet.owner._id === props.user.profile ? ( 
       <>
-      <header>
-        <OwnerInfo content={pet} />
-      </header>
-      <h1>Pet Information</h1>
-      <div className={styles.petPhoto} 
+      <div className={styles.details} 
         key={pet.photo} >
-        <img src={pet.photo} alt="A photo of this puppy" />
-      </div>
+        <img id={styles.petPhoto} src={pet.photo} alt="A photo of this puppy" />
+     
+      <div className={styles.rightPanel}>
+      <header>
+        {/* //title-container */}
+        <OwnerInfo content={pet} />
+      <h1>Pet Information</h1>
+      </header>
+      
       <article>
+        {/* info-container */}
           <h5>Name: {pet.name.toUpperCase()}</h5>
           <h5>Phone Number: {pet.phone}</h5>
           <h5>Address: {pet.address}</h5>
@@ -58,6 +68,8 @@ const PetDetails = (props) => {
           </NavLink> 
         </span>
       </article >
+      </div>
+      </div>
       <article className={styles.newVisits}> 
         <h2>Visits</h2>
       <span >
@@ -65,14 +77,16 @@ const PetDetails = (props) => {
           <Icon category='Create' className={styles.createBtn} />
         </NavLink>
       </span>
-      </article>
       <section className={styles.visits}>
+      
         <Visits
           petId={petId}
           user={props.user}
           visits={pet.visits}
+          handleDeleteVisit={handleDeleteVisit}
         />
       </section>
+      </article>
         </>
       ) : (
         <div className={styles.accessSection}>

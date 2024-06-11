@@ -8,13 +8,13 @@ const Visits = (props) => {
   return (
     <>
       {props.visits.map((visit) => (
-
               <VisitCard
                 key={visit._id}
                 visit={visit}
                 user={props.user}
+                petId={props.petId}
+                handleDeleteVisit={props.handleDeleteVisit}
               />
-
       ))}
     </>
   )

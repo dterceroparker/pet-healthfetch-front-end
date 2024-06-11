@@ -32,3 +32,45 @@
 .container section p.urgent {
   color: red; /* Highlight urgent visits */
 }
+
+.container span {
+  width: 100%;
+  display: flex;
+	margin-top: 10px;
+  align-items: center;
+}
+
+.container span button, .container span a  {
+  cursor: pointer;
+}
+
+.container header button, .container header a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+.container header button img, .container header a img {
+  width: 24px;
+  height: 24px;
+  opacity: .25;
+}
+
+
+.container span button, .container span a {
+  margin: 0;
+  width: 20%;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  margin-left: 7px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid yellow;
+}
+

@@ -1,13 +1,13 @@
 //npm modules
-// import { NavLink } from "react-router-dom"
-// import Icon from "../Icon/Icon"
+import { NavLink } from "react-router-dom"
+import Icon from "../Icon/Icon"
 import { DateTime } from "luxon"
 
 
 //css
 import styles from './VisitCard.module.css'
 
-const VisitCard = ({ visit, dateFormat = 'yyyy-LL-dd HH:mm' }) => {
+const VisitCard = ({ visit, petId, handleDeleteVisit, dateFormat = 'yyyy-LL-dd HH:mm' }) => {
   // Function to format visitDate using Luxon
   const formatVisitDate = (date) => {
     console.log('IN formatVisitDate', {date, dateFormat})
@@ -25,6 +25,18 @@ const VisitCard = ({ visit, dateFormat = 'yyyy-LL-dd HH:mm' }) => {
         <p>Visit Date & Time: {formatVisitDate(visit.visitDate)}</p>
         <p>Is Visit Urgent?: {visit.urgent ? 'Yes' : 'No'}</p>
       </section>
+        <header>
+      <span>
+        <>
+        <NavLink to={`/pets/${petId}/visits/edit`} state={visit}>
+          <Icon category='Edit'  />
+        </NavLink>
+        <button  onClick={() => handleDeleteVisit(petId, visit._id)} >
+          <Icon category='Trash' />
+        </button>
+        </>
+      </span>
+      </header>
     </article>
   )
 }

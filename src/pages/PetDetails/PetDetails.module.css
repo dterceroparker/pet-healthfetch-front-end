@@ -1,7 +1,6 @@
 .container {
+
   margin-top: 20px; /* Adjust as needed */
-  display: flex;
-  flex-direction: column;
   border: 1px solid rgba(100, 148, 237, 0.52);
   /* Optional: Add max-width for responsiveness */
   /* max-width: 700px; */
@@ -15,7 +14,108 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow-x: scroll; 
+  scrollbar-base-color: aqua;
+  padding: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px; 
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll; 
+  scrollbar-base-color: aqua;
+  padding: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  /* justify-content: space-evenly; */
+}
+
+header > h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+#petPhoto {
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.details {
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
+  justify-content: space-between; 
+  /* gap: 30px; */
+  /* padding: 30px; */
+
+}
+
+.rightPanel {
+  height: 700px;
+  width: 100%;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: var(--accent-primary);
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px var(--accent-secondary);
+border: 1px solid rgba(100, 148, 237, 0.52);
+
+}
+
+.newVisits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  background-color: var(--accent-primary);
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px var(--accent-secondary);
+  border: 1px solid rgba(100, 148, 237, 0.52);
+}
+
+.visits {
+  padding: 20px;
+  /* width: 15%; */
+  /* height: 300px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
 }
 
 .container .accessSection {
@@ -128,18 +228,72 @@
   height: 14px;
 }
 
-.container .editBtn .createBtn {
+.container span {
+  width: 100%;
+  display: flex;
+	margin-top: 10px;
+  align-items: center;
+}
+
+.editBtn {
   /* Use a CSS preprocessor for reusable button styles */
   margin: 0 8px;
   border: 1px solid rgb(203, 152, 0);
   padding: 0;
   width: 32px;
   height: 32px;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0);
   cursor: pointer;
   box-shadow: none;
   font-weight: 600;
   border-radius: 50%;  
+
+  width: 24px;
+  height: 24px;
+  opacity: .25;
+  background-color: #583ee9;
+  color:rgb(203, 152, 0)
+}
+
+a img   {
+  width: 30px;
+  height: 30px;
+  background-color: #ffc107; /* Yellow color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  display: flex; /* Allow centering icon inside button */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+  transition: all 0.2s ease-in-out;
+}
+
+.createBtn:hover, .editBtn:hover  {
+  background-color: #ff9800; /* Slightly darker yellow on hover */
+}
+
+.createBtn svg, .editBtn svg { /* Assuming icons are SVGs */
+  width: 100%; /* Match button width */
+  height: 100%; /* Match button height */
+  fill: currentColor; /* Inherit button text color */
+}
+
+.container button i {
+  margin: 0 8px;
+  border: 1px solid rgb(203, 152, 0);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: 600;
+  border-radius: 50%;  
+  background-color: #3e57e9;
+
+  width: 24px;
+  height: 24px;
+  opacity: .25;
 }
 
 .container span {
@@ -168,3 +322,4 @@
 }
 
 /* Remove commented out Hoot CSS section */
+

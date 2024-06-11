@@ -87,6 +87,7 @@ const NewPet = ({ handleAddPet }) => {
   return (
     <main className={styles.container}>
       <p>{message}</p>
+      <h1>New Pet Form</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input

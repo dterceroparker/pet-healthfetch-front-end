@@ -1,6 +1,18 @@
 .container {
   overflow-y: auto; 
   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  scrollbar-base-color: aqua;
+  padding: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
   width: 100%; 
   margin: 0 auto; 
   padding: 21px;
@@ -12,14 +24,19 @@
   padding: 10px;
 }
 
-
-/* .scroller {
-  height: 70px;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scrollbar-color: rgba(23, 123, 114, 0.245) #d6eadf;
-} */
-
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none; /* Remove default outline on focus */
+  transition: border-color 0.2s ease-in-out; /* Add transition effect */
+  margin-bottom: 10px;
+}
 
 h2 {
   text-align: center;
@@ -33,9 +50,6 @@ h2 {
   display:flex;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
-  /* styles for the search input element */
-  /* display: block; */
   width: 50%;
   padding: 10px 15px;
   border: 1px solid #ddd;
@@ -44,6 +58,14 @@ h2 {
   outline: none; /* Remove default outline on focus */
   transition: border-color 0.2s ease-in-out; /* Add transition effect */
   margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .searchInput:focus {

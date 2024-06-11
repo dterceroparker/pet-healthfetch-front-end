@@ -1,79 +1,53 @@
 /* Profiles.module.css */
 
-/* Container for the entire profiles section */
 .container {
-  overflow-y: auto; 
   display: flex;
-  width: 100%; 
-  margin: 0 auto; 
-  padding: 21px;
-  margin-top: 40px;
   flex-wrap: wrap;
-  gap: 14px;
-  height: 900px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
 
-.container::-webkit-scrollbar {
-  width: 10px;
-  background-color: red;
-}
-/* Styles for the heading and loading message */
-.container h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center; /* Center heading within container */
-}
-
-/* Styles for individual profile elements */
- .profiles {
-  width: 300px; /* Adjust width as needed */
-  background-color: #254ef325; /* White background for cards */
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(30, 63, 229, 0.924); /* Subtle shadow for cards */
-  overflow: hidden; /* Clip image within card boundaries */
-  display: flex; /* Allow stacking elements side-by-side */
-}
-
-.profiles img {
-  width: 100%; /* Adjust width for photo as needed */
-  height: 200px; /* Set image height */
-  object-fit: cover; /* Ensure image fills card width and height proportionally */
-  transition: transform 0.2s ease-in-out; /* Smooth hover effect for image */
-}
-
-.profiles p {
-  width: 50%; /* Adjust width for paragraph as needed */
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px; /* Padding around name */
-  text-align: left; /* Align text within paragraph */
-}
-
-.profiles:hover {
-  transform: scale(1.02); /* Slight card zoom on hover */
-}
-
-.profiles:hover img {
-  transform: scale(1.05); /* Increased image zoom on hover (layered effect) */
-}
-
-
-
-.container img {
-  /* width: 32px; */
-  /* height: auto; */
-  /* object-fit: cover; */
-  /* margin-right: 12px; */
-  /* border-radius: 50%; */
-  
-}
-
-
-
-.container section {
+  min-height: calc(100vh - 75px);
+  background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 75px 50px;
+}
+
+.profiles {
+  display: flex; /* Arrange profiles horizontally */
+  flex-wrap: wrap; /* Allow wrapping to fit screen size */
+  justify-content: space-between; /* Distribute cards evenly */
+  margin: 20px auto; /* Add margin for spacing */
+  width: 80%; /* Adjust width as needed */
+}
+
+.profile {
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  margin: 10px; /* Margin between cards */
+  padding: 15px; /* Padding inside cards */
+  text-align: center; /* Center content within card */
+  width: 220px; /* Fixed card width */
+  transition: all 0.2s ease-in-out; /* Add smooth hover transition */
+}
+
+.profile:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add slight hover shadow */
+}
+
+.profile img {
+  width: 100px; /* Fixed image width */
+  height: 100px; /* Fixed image height */
+  border-radius: 50%; /* Round image */
+  margin-bottom: 10px; /* Add space below image */
+}
+
+.profile p {
+  font-size: 16px; /* Text size for name */
+  font-weight: bold; /* Bold name */
+  margin: 0; /* Remove default margin */
+  color: blue;
 }

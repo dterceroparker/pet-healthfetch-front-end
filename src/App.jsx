@@ -6,13 +6,15 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+import Logout from './pages/Logout/Logout'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Profiles from './pages/Profiles/Profiles'
 import PetList from './pages/PetList/PetList'
 import PetDetails from './pages/PetDetails/PetDetails'
 import NewPet from './pages/NewPet/NewPet'
 import EditPet from './pages/EditPet/EditPet'
 import NewVisit from './pages/NewVisit/NewVisit'
+import EditVisit from './pages/EditVisit/EditVisit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -74,14 +76,15 @@ function App() {
     }
   }
 
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" 
-          element={
-          <Landing user={user} />} 
+        <Route path="/" element={<Landing />} />
+        <Route path="/auth/logout" element={<Logout />} 
         />
+        
         <Route
           path="/profiles"
           element={
@@ -118,10 +121,20 @@ function App() {
           }
         />
         <Route
+          path="/pets/:petId/visits/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditVisit 
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/pets/:petId"
           element={
             <ProtectedRoute user={user}>
-              <PetDetails user={user} />
+              <PetDetails user={user} 
+             />
             </ProtectedRoute>
           }
         />
@@ -131,7 +144,6 @@ function App() {
             <ProtectedRoute user={user}>
               <NewPet 
               handleAddPet={handleAddPet}
-              // handleAddPhoto={handleAddPhoto}
               />
             </ProtectedRoute>
           }

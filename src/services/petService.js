@@ -158,6 +158,35 @@ async function addVisitPhoto(photoData, petId) {
   }
 }
 
+const updateVisit = async (petId, visitFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${petId}/visits`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(visitFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteVisit = async (petId, visitId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${petId}/visits/${visitId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export {
   index,
@@ -168,4 +197,6 @@ export {
 
   createVisit,
   addVisitPhoto,
+  updateVisit,
+  deleteVisit,
 }

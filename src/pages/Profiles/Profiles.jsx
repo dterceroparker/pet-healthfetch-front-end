@@ -25,9 +25,12 @@ const Profiles = () => {
   
   return (
     <main className={styles.container}>
+      <header>
       <h1>Pet Parents</h1>
+      </header>
       {profiles.length ? (
         <section className={styles.profiles}>
+          <ul>
           {/* Map over profiles to display cards */}
           {profiles.map(profile => (
             <article key={profile._id} className={styles.profile}>
@@ -35,6 +38,7 @@ const Profiles = () => {
               <p>{profile.name}</p>
             </article>
           ))}
+          </ul>
         </section>
       ) : (
         <p>No profiles found.</p>

@@ -7,15 +7,34 @@
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
-  box-shadow: -1px 5px 19px -5px rgba(52, 25, 228, 0.082);
-  -moz-box-shadow: -1px 5px 19px -5px rgb(11, 36, 231);
-  -webkit-box-shadow: -1px 5px 19px -5px rgba(232, 9, 9, 0.25);
+  box-shadow: -1px 5px 19px -5px rgba(138, 127, 205, 0.082);
+  -moz-box-shadow: -1px 5px 19px -5px rgb(148, 155, 211);
+  -webkit-box-shadow: -1px 5px 19px -5px rgba(31, 122, 219, 0.25);
 }
 
-.container img {
-  width: 25%;
-  margin-top: 5px;
-  filter: drop-shadow(-10px -10px 10px rgba(255, 255, 255, 0.651));
+#logo {
+
+  margin-top: 10px;
+  filter: drop-shadow(-10px -10px 10px rgba(40, 38, 38, 0.161));
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 75px;
+  height: 70px;
+  border-radius: 50%;
+
+  -moz-box-shadow: 0 20px 20px rgba(35, 106, 150, 0.728);
+
+
+
+  background: rgb(23, 22, 20);
+  background: linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFCB6B", endColorstr="#3D8BFF", GradientType=1 );
+
+
+  
 }
 
 .container ul {
@@ -26,11 +45,21 @@
   font-weight: bold;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 60px; 
+  margin-left: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .container li {
   margin-left: 35px;
   text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  transition: color 0.25s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .container p {
@@ -39,7 +68,15 @@
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  /* margin-right: 600px; */
+  margin-right: 60px;
+  margin-left: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(254, 254, 254);
+  transition: color 0.25s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 i {
@@ -53,7 +90,15 @@ i {
     -3px 3px 0 #000,
     -3px -3px 0 #000,
     3px -3px 0 #000;
+    width: 20px; /* Adjust as needed */
+  height: 20px; /* Adjust as needed */
+  transition: all 0.2s ease-in-out; /* Add optional hover effect */
 
+}
+
+.container i:hover  {
+  transform: scale(1.2);
+  color: #d6a617; 
 }
 
 

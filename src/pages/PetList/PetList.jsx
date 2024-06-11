@@ -24,6 +24,7 @@ const PetList = (props) => {
 
   return (
     <main className={styles.container}>
+      <header>
       <h1>PET MEMBERS</h1>
       <section className={styles.searchInput}>
       <input 
@@ -31,9 +32,10 @@ const PetList = (props) => {
         placeholder="Search pet members..."
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
-      /> {/* Search input */}
+        /> {/* Search input */}
       {!filteredPets.length && <h2>Oops! No pets found!</h2>}
       </section>
+        </header>
       <ul>
         {filteredPets.map((pet) => (
           <PetCard key={pet._id} pet={pet} user={props.user} />

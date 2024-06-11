@@ -81,7 +81,7 @@ const NewVisit = ({ handleAddVisit }) => {
   return (
     <>
     <p>{message}</p>
-      <h1>New Visit Form</h1>
+    <h1>New Visit Form</h1>
       <form className={styles.container} 
         onSubmit={handleSubmit}>
         <label htmlFor="visitReason-input">Visit Reason
