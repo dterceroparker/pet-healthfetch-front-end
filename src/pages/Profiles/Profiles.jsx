@@ -25,7 +25,7 @@ const Profiles = () => {
   
   return (
     <main className={styles.container}>
-      <header>
+      <header className={styles.profileHeader}>
       <h1>Pet Parents</h1>
       </header>
       {profiles.length ? (
