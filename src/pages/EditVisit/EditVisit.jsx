@@ -1,4 +1,3 @@
-// npm modules
 import { useState } from "react"
 import { useLocation, useParams, useNavigate } from "react-router-dom"
 
@@ -13,8 +12,17 @@ const EditVisit = () => {
   const { state } = useLocation()
   const { petId } = useParams()
   const [formData, setFormData] = useState(state)
+  const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
 
   const handleChange = (evt) => {
+    // Validate date input only if it's the visitDate field
+    if (evt.target.name === 'visitDate') {
+      const enteredDate = evt.target.value;
+      if (enteredDate && enteredDate < today) {
+        alert("Please enter a date on or after today.");
+        return; // Prevent form update for invalid dates
+      }
+    }
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
@@ -25,12 +33,12 @@ const EditVisit = () => {
   }
 
   return (
-    <main className={styles.container}>
-      <form onSubmit={handleSubmit}>
+   <>
+      <form className={styles.container}
+      onSubmit={handleSubmit}>
         <h1>Edit Visit Form</h1>
         <label htmlFor="visitReason-input">Visit Reason</label>
         <input
-          required
           type="text" 
           name="visitReason"
           id="visitReason-input"
@@ -39,27 +47,27 @@ const EditVisit = () => {
           onChange={handleChange}
         />
         <label htmlFor="visitDate-input">Visit Date</label>
-				<input
-          required
+        <input
           type="datetime-local"
           name="visitDate"
           id="visitDate-input"
           value={formData.visitDate}
           placeholder="Visit Request Date"
+          min={today} // Set minimum date to today
           onChange={handleChange}
         />
         <label htmlFor="urgent-checkbox">Is Visit Urgent?</label>
-				<input
-          required
+        <input
           type="checkbox"
           name="urgent"
-          id="urgent checkbox"
-          value={formData.urgent}
+          id="urgent-checkbox"
+          style={{ margin: '10px' }}
+          checked={formData.urgent}
           onChange={handleChange}
         />
         <button type="submit">SUBMIT</button>
       </form>
-    </main>
+    </>
   )
 }
 

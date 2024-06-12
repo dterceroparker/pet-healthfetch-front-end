@@ -42,7 +42,7 @@ const PetDetails = (props) => {
         <img id={styles.petPhoto} src={pet.photo} alt="A photo of this puppy" />
      
       <div className={styles.rightPanel}>
-      <header>
+      <header className={styles.detailsHeader}>
         {/* //title-container */}
         <OwnerInfo content={pet} />
       <h1>Pet Information</h1>
@@ -74,7 +74,7 @@ const PetDetails = (props) => {
         <h2>Visits</h2>
       <span >
         <NavLink to={`/pets/${petId}/visits/new`}> 
-          <Icon category='Create' className={styles.createBtn} />
+          <Icon category='Create' id={styles.createBtn} />
         </NavLink>
       </span>
       <section className={styles.visits}>

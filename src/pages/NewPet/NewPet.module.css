@@ -1,113 +1,145 @@
+/* NewPet.module.css */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: scroll;
-  width: 100%;
-  scrollbar-base-color: aqua;
-  padding: 40px;
-  margin-top: 60px;
-
-  min-height: calc(100vh - 75px);
-  background-color: var(--bg-secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 75px 50px;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 500px; /* Set a maximum width for larger screens */
+  margin: 50px auto; /* Center the form horizontally */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f5f5f5; /* Light gray background */
+  font-family: Arial, sans-serif; /* Choose a professional font */
+  overflow-y: auto; /* Enable vertical scroll within the container */
+  max-height: 500px; /* Set a maximum height for the scrollable area (adjust as needed) */
 }
 
 
-.container form {
-  display: flex;
-  align-items: center; /* Align label and input vertically */
-  margin-bottom: 15px;
+h1 {
+  font-size: 24px; /* Larger heading for emphasis */
+  margin-bottom: 20px; /* Spacing after heading */
+  color: #333; /* Darker text for better contrast */
 }
 
-.container input,
-.container select {
-  flex: 1; /* Allows input to fill remaining space */
-  padding: 10px;
-  border: 1px solid #f3c305ea;
-  border-radius: 4px;
-  margin-left: 10px; /* Adds some space between label and input */
-}
-
-
-input,
-textarea,
-select,
-button {
-  width: 100%;
-  /* border: none; */
-  padding: 14px;
-  font-size: 14px;
-  /* resize: vertical; */
-  /* border-radius: 5px; */
-  background: #f4f9fa;
-  margin: 7px 0px 14px 0px;
-  border: 1.5px solid #dfe6e8;
-  box-shadow: inset 5px 5px 6px #e0e5e6, inset -5px -5px 6px #f8fdfe;
+p {
+  margin-bottom: 20px; /* Spacing after message */
+  color: #dc3545; /* Error message color (red) */
+  /* Consider adding success message styling as well */
 }
 
 label {
-  display:block;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: 600;  /* Assuming you want the same font style */
+  font-weight: bold; /* Bold labels for readability */
+  margin-bottom: 5px; /* Spacing between label and input */
+  display: block; /* Display labels on their own line */
+  font-size: 14px; /* Slightly smaller font size for labels */
+  color: #333; /* Darker text for better contrast */
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border: 1.5px solid rgb(240, 240, 240);
-}
-
-button[type="submit"] {
-  color: white;
-  box-shadow: none;
-  font-weight: 600;
-  background: rgb(70, 215, 255, .75);
-  border: 1.5px solid rgba(255, 255, 255, .6);
-}
-
-.photo input {
-  width: 42%;
-  background-color: #0e7af66b;
-  box-shadow: none;
-  border: none;
-  resize: none;
-  gap: 30px;
-}
-
-.photo button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-  width: 35% !important;
+input,
+select,
+textarea {
+  width: 100%; /* Full width for most elements */
+  padding: 12px 15px; /* Consistent padding */
+  font-size: 16px; /* Consistent font size */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-bottom: 15px; /* Spacing between elements */
+  color: #333; /* Darker text for better contrast */
+  margin: auto;
+  display: block;
+  margin-bottom: 15px; /* Spacing between elements */
 }
 
 
-.container > form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* margin-bottom: 50px; */
-  background: rgb(255, 255, 255, 0.3);
-  padding: 3em;
-  border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  text-align: center;
+
+input[type="file"] {
+  /* Style the custom button-like element */
+  display: inline-block;
+  padding: 10px 20px; /* Consistent padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  transition: all 0.3s ease-in-out; /* Smooth hover effect */
+  color: #333; /* Darker text for better contrast */
+  font-size: 16px; /* Consistent font size */
+  background-color: #eee; /* Light background color */
+  margin-top: 10px;
 }
 
-.submit {
-  display: flex;
-  flex-direction: row;
-  margin-top: 24px;
-  border-radius: 8px;
-  padding: 8px;
-  gap: 30px;
+input[type="file"]:hover {
+  background-color: #26c5c0; /* Slightly darker on hover */
+}
+
+input[type="file"]::before {
+  /* Style the text displayed next to the button */
+  content: "Select Photo"; /* Replace with your desired text */
+  margin-right: 10px; /* Spacing between text and button */
+  font-weight: bold; /* Bold font for emphasis */
+}
+
+button {
+  background-color: #2196f3; /* Blue background */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Consistent padding */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  transition: all 0.2s ease-in-out; /* Smooth hover effect */
+  margin-right: 10px; /* Spacing between buttons */
+  margin-top: 15px; /* Spacing above button */
+  margin-bottom: 15px; /* Spacing between buttons */
+  margin-left: 10px; /* Spacing between buttons */
+  margin-right: 10px; /* Spacing between buttons */
+}
+
+button:hover {
+  background-color: #1779ba; /* Darker blue on hover */
+}
+
+button.cancel-btn {
+  /* Style cancel button for differentiation */
+  background-color: #ccc; /* Lighter gray background */
+  color: #333; /* Darker text */
+}
+
+.cancel-btn:hover {
+  background-color: #ddd; /* Slightly darker gray on hover */
+}
+
+/* Apply disabled state styles appropriately based on your framework */
+button[disabled] {
+  /* Example styles for disabled button */
+  background-color: #ddd; /* Lighter gray for disabled state */
+  cursor: not-allowed; /* Indicate disabled state visually */
+}
+
+/* NewPet.module.css */
+
+/* ... existing styles for .container ... */
+
+button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 15px 32px; /* Increased padding for better text visibility */
+  text-align: center; /* Center text within button */
+  text-decoration: none; /* Remove underline on hover */
+  display: inline-block; /* Display buttons inline */
+  font-size: 16px; /* Consistent font size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  transition: 0.3s ease-in-out; /* Smooth hover effect */
+  margin: 5px; /* Spacing between buttons */
+}
+
+button:hover {
+  opacity: 0.8; /* Slight opacity change on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.submit-btn { /* Style the submit button for differentiation */
+  background-color: #3f51b5; /* Blue background */
+}
+
+.submit-btn:hover {
+  background-color: #283593; /* Darker blue on hover */
 }

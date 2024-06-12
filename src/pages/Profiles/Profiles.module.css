@@ -7,35 +7,66 @@
   align-items: center;
   justify-content: center;
 
-  min-height: calc(100vh - 75px);
-  background-color: var(--bg-secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: calc(100vh - 75px); /* Adjust navbar height as needed */
+  background-color: var(--bg-secondary); /* Assuming a pre-defined variable */
   padding: 75px 50px;
+  overflow-y: auto; /* Enable vertical scroll for content overflow */
+  /* Consider adding margin-bottom: [desired value] here (optional) */
+  box-sizing: border-box; /* Prevent margin collapsing */
+}
+
+.container::-webkit-scrollbar { /* Custom scrollbar (refer to explanation above) */
+  width: 10px;
+  height: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
 }
 
 .profiles {
   display: flex; /* Arrange profiles horizontally */
   flex-wrap: wrap; /* Allow wrapping to fit screen size */
-  justify-content: space-between; /* Distribute cards evenly */
-  margin: 20px auto; /* Add margin for spacing */
+  justify-content: center; /* Distribute cards evenly */
+  align-items: center;
+  gap: 20px; /* Add spacing between cards */
+  padding: 20px; /* Add padding between cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  /* Consider adding margin-bottom: [desired value] here (optional) */
+  margin-bottom: 10px;
+  margin: auto;
   width: 80%; /* Adjust width as needed */
+  max-width: 1000px; /* Adjust max-width for responsiveness */
+  perspective: 1000px; /* Enable perspective for 3D effects */
+  /* Consider adding a CSS animation for hover effect (optional) */
 }
 
 .profile {
-  background-color: #fff; /* White background */
+  background-color: #fff; /* Light background for card */
   border: 1px solid #ddd; /* Light gray border */
   border-radius: 5px; /* Rounded corners */
   margin: 10px; /* Margin between cards */
   padding: 15px; /* Padding inside cards */
   text-align: center; /* Center content within card */
   width: 220px; /* Fixed card width */
-  transition: all 0.2s ease-in-out; /* Add smooth hover transition */
+  transition: all 0.2s ease-in-out; /* Smooth hover transition */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  /* Consider adding a CSS animation for hover effect (optional) */
 }
 
 .profile:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add slight hover shadow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Increased hover shadow effect */
+  transform: translateY(-5px); /* Slight upward movement on hover */
 }
 
 .profile img {
@@ -43,11 +74,12 @@
   height: 100px; /* Fixed image height */
   border-radius: 50%; /* Round image */
   margin-bottom: 10px; /* Add space below image */
+  /* Consider adding a CSS animation for hover effect (optional) */
 }
 
 .profile p {
   font-size: 16px; /* Text size for name */
   font-weight: bold; /* Bold name */
   margin: 0; /* Remove default margin */
-  color: blue;
+  color: blue; /* Adjust text color as needed */
 }

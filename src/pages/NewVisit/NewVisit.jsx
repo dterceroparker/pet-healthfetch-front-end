@@ -19,8 +19,17 @@ const NewVisit = ({ handleAddVisit }) => {
   })
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const today = new Date().toISOString().slice(0, 10)
   
   const handleChange = (evt) => {
+    // Validate date input only if it's the visitDate field
+    if (evt.target.name === 'visitDate') {
+      const enteredDate = evt.target.value;
+      if (enteredDate && enteredDate < today) {
+        setMessage("Please enter a date on or after today.");
+        return; // Prevent form update for invalid dates
+      }
+    }
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
@@ -81,9 +90,9 @@ const NewVisit = ({ handleAddVisit }) => {
   return (
     <>
     <p>{message}</p>
-    <h1>New Visit Form</h1>
       <form className={styles.container} 
         onSubmit={handleSubmit}>
+          <h1>New Visit Form</h1>
         <label htmlFor="visitReason-input">Visit Reason
         </label>
         <input
@@ -105,6 +114,7 @@ const NewVisit = ({ handleAddVisit }) => {
           id="visitDate-input"
           style={{ margin: '10px' }}
           value={formData.visitDate}
+          min={today} // Set minimum date to today
           onChange={handleChange}
         />
         <label htmlFor="urgent-checkbox">Is Visit Urgent?</label>

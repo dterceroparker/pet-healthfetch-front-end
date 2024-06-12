@@ -24,7 +24,7 @@ const PetList = (props) => {
 
   return (
     <main className={styles.container}>
-      <header>
+      <header className={styles.listHeader}>
       <h1>PET MEMBERS</h1>
       <section className={styles.searchInput}>
       <input 
@@ -35,7 +35,7 @@ const PetList = (props) => {
         /> {/* Search input */}
       {!filteredPets.length && <h2>Oops! No pets found!</h2>}
       </section>
-        </header>
+      </header>
       <ul>
         {filteredPets.map((pet) => (
           <PetCard key={pet._id} pet={pet} user={props.user} />

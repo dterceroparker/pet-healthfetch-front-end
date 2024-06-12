@@ -79,51 +79,53 @@ const Signup = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1>Please Sign Up</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+      <h1>Please Sign Up</h1>
         <label className={styles.label}>
-          Name
+          Name </label>
           <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
+       
         <label className={styles.label}>
-          Email
+          Email </label>
           <input
             type="text"
             value={email}
             name="email"
             onChange={handleChange}
           />
-        </label>
+       
         <label className={styles.label}>
-          Password
+          Password  </label>
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
           />
-        </label>
+       
         <label className={styles.label}>
-          Confirm Password
+          Confirm Password  </label>
           <input
             type="password"
             value={passwordConf}
             name="passwordConf"
             onChange={handleChange}
           />
-        </label>
+       
         <label className={styles.label}>
-          Upload Photo
+          Upload Photo </label>
           <input 
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
-        </label>
+        
         <div>
+          <button>
           <Link to="/">Cancel</Link>
+          </button>
           <button
             className={styles.button}
             disabled={ isFormInvalid() || isSubmitted }

@@ -1,74 +1,81 @@
-.container {
-  overflow-y: auto; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: scroll;
-  scrollbar-base-color: aqua;
-  padding: 40px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  margin-left: 60px;
-  margin-right: 60px;
-  border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  overflow-y: scroll;
-  width: 100%; 
-  margin: 0 auto; 
-  padding: 21px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-  gap: 14px;
-  height: 900px;
-  border: 1px solid #ccc;
-  padding: 10px;
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-header {
+/* Header */
+.container .listHeader {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none; /* Remove default outline on focus */
-  transition: border-color 0.2s ease-in-out; /* Add transition effect */
-  margin-bottom: 10px;
+  padding: 15px 20px;
+
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; 
+  text-align: center; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 10; 
+  gap: 20px;
+  color: #333; /* Dark text color */
 }
 
 h2 {
-  text-align: center;
+  margin: 0; /* Remove default margins from headings */
+  font-weight: bold; /* Make header text bold */
 }
 
-h2 {
-  text-align: center;
+/* Container */
+.container {
+  display: flex; /* Allow for flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Set minimum height for viewport coverage (assuming 80px header height) */
+
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  overflow-x: hidden; /* Hide horizontal scrollbar (unless needed) */
+  overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+  padding: 40px; /* Add spacing around content */
+  animation: fadeInUp 0.5s ease-in-out forwards; /* Add a fade-in animation */
+  margin-top: 10px;;
 }
 
+ul {
+  margin-top: 100px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start with slight upward movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Animate to normal position */
+  }
+}
+
+/* Search Input */
 .searchInput {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+  width: 50%; /* Set search input width */
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   outline: none; /* Remove default outline on focus */
   transition: border-color 0.2s ease-in-out; /* Add transition effect */
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
   background-color: white;
   color: black;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
 }
 
 .searchInput:focus {
-  /* Styles for the search input on focus */
-  border-color: #ea3030; /* Change border color on focus */
+  border-color: #3079f4; /* Change border color on focus (blue) */
 }
