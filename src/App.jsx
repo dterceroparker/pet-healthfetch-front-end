@@ -134,7 +134,7 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <PetDetails user={user} 
-             />
+        />
             </ProtectedRoute>
           }
         />

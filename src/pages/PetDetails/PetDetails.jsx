@@ -40,16 +40,13 @@ const PetDetails = (props) => {
       <div className={styles.details} 
         key={pet.photo} >
         <img id={styles.petPhoto} src={pet.photo} alt="A photo of this puppy" />
-     
       <div className={styles.rightPanel}>
       <header className={styles.detailsHeader}>
-        {/* //title-container */}
         <OwnerInfo content={pet} />
       <h1>Pet Information</h1>
       </header>
       
-      <article>
-        {/* info-container */}
+      <article className={styles.articleDetails}>
           <h5>Name: {pet.name.toUpperCase()}</h5>
           <h5>Phone Number: {pet.phone}</h5>
           <h5>Address: {pet.address}</h5>
@@ -78,7 +75,6 @@ const PetDetails = (props) => {
         </NavLink>
       </span>
       <section className={styles.visits}>
-      
         <Visits
           petId={petId}
           user={props.user}

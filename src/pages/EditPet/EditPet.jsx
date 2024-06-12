@@ -20,7 +20,7 @@ const EditPet = (props) => {
   }
 
   const isFormInvalid = () => {
-    return !(formData.phone && formData.address && formData.sex && formData.elixir && formData.medicalHistory && formData.medications && formData.allergies && formData.vetName)
+    return !(formData.name && formData.phone && formData.address && formData.sex && formData.elixir && formData.medicalHistory && formData.medications && formData.allergies && formData.vetName)
   }
 
   const handleNavigateHome = () => {
@@ -29,9 +29,9 @@ const EditPet = (props) => {
 
 return (
     <main className={styles.container}>
-      <h1>EDIT PET</h1>
       <form onSubmit={handleSubmit}>
-        {/* <label htmlFor="name-input">Name</label>
+      <h1>EDIT PET</h1>
+        <label htmlFor="name-input">Name</label>
         <input
           required
           type="text" 
@@ -40,7 +40,7 @@ return (
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
-        /> */}
+        />
         <label htmlFor="phone-input">Phone</label>
         <input
           required
@@ -61,36 +61,6 @@ return (
           placeholder="Address"
           onChange={handleChange}
         />
-        {/* <label htmlFor="birthDate-input">Birthdate</label>
-        <input
-          required
-          type="date"
-          name="birthDate"
-          id="birthDate-input"
-          value={formData.birthDate}
-          placeholder="Birthdate"
-          onChange={handleChange}
-        /> */}
-        {/* <label htmlFor="breed-input">Breed</label>
-        <input
-          required
-          type="text"
-          name="breed"
-          id="breed-input"
-          value={formData.breed}
-          placeholder="Breed"
-          onChange={handleChange}
-        />
-        <label htmlFor="color-input">Color</label>
-        <input
-          required
-          type="text"
-          name="color"
-          id="color-input"
-          value={formData.color}
-          placeholder="Color"
-          onChange={handleChange}
-        /> */}
         <label htmlFor="sex-input">Sex</label>
         <select
           required
@@ -154,15 +124,6 @@ return (
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        {/* <label className={styles.photo} >
-          Upload Photo
-          <input 
-            type="file" 
-            name="photo"
-            onChange={handleChangePhoto}
-            ref={imgInputRef}
-          />
-        </label> */}
         <>
         <button disabled={isFormInvalid()} type="submit">Submit</button>
         <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>

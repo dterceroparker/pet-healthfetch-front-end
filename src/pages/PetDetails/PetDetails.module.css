@@ -1,68 +1,40 @@
 .container {
-  margin-top: 70px; /* Adjust as needed */
-  border: 1px solid rgba(100, 148, 237, 0.52);
-  /* Optional: Add max-width for responsiveness */
-  /* max-width: 700px; */
-
-  /* Font family and sizes can be set globally or here */
-  font-family: sans-serif;
-  font-size: 16px; /* Base font size */
-
-  /* Adjust padding as needed */
-  padding: 14px;
+  margin-top: 60px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: scroll; 
-  scrollbar-base-color: aqua;
-  padding: 40px;
-  margin-top: 60px;
-  margin-bottom: 60px; 
-  margin-left: 60px;
-  margin-right: 60px;
+  overflow-x: scroll;
+  scrollbar-color: aqua;
   border-radius: 20px;
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  overflow-y: scroll; 
-  scrollbar-base-color: aqua;
-  padding: 40px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-
-  /* justify-content: space-evenly; */
+  overflow-y: scroll;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 60px;
 }
 
-
 header > h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
   width: 100%;
-  text-align: center;
-  font-weight: 600;
+  font-size: 19px; 
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
 }
 
 #petPhoto {
-  width: 40%;
+  width: 50%;
   height: auto;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
 }
 
 .details {
@@ -71,10 +43,6 @@ header > h1 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  justify-content: space-between; 
-  /* gap: 30px; */
-  /* padding: 30px; */
-
 }
 
 .rightPanel {
@@ -82,14 +50,24 @@ header > h1 {
   width: 60%;
   justify-content: space-around;
   padding: 30px;
-  background-color: var(--accent-primary);
   border-radius: 8px;
-  box-shadow: 5px 5px 5px var(--accent-secondary);
-border: 1px solid rgba(100, 148, 237, 0.52);
-display: flex;
-flex-direction: column;
-align-items: center;
+  box-shadow: 5px 5px 5px cornflowerblue;
+  border: 1px solid rgba(100, 148, 237, 0.52);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+h2 {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white
 }
 
 .newVisits {
@@ -98,11 +76,10 @@ align-items: center;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 30px;
-  background-color: var(--accent-primary);
+  width: 100%;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 5px 5px 5px var(--accent-secondary);
+  box-shadow: 5px 5px 5px cornflowerblue;
   border: 1px solid rgba(100, 148, 237, 0.52);
 }
 
@@ -111,41 +88,37 @@ align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  margin: auto;
 }
+
 .visits {
-  padding: 20px;
-  /* width: 15%; */
-  /* height: 300px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px; 
-  /* justify-content: space-between; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-
+  width: 50%;
+  margin: auto 0;
 }
 
 .container .accessSection {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center elements horizontally */
-  justify-content: center; /* Center elements vertically within container (optional) */
-  /* Other styles... */
-  margin: 0 auto
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-top: 20px;
+  border-top: 1px solid rgba(100, 148, 237, 0.52); 
+  padding-top: 14px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px cornflowerblue;
+  border: 1px solid rgba(100, 148, 237, 0.52);
+  margin-bottom: 20px;
 }
-
 
 .container .returnBtn {
   width: fit-content;
   text-align: center;
   background-color: #1014e93e;
-  /* width: 10%; */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -158,82 +131,27 @@ align-items: center;
   }
 }
 
-@media (min-width: 768px) { /* For screens wider than 768px */
+@media (min-width: 768px) { 
   .returnBtn {
-    width: 150px; /* Set a fixed width for larger screens */
+    width: 150px; 
   }
 }
 
-@media (max-width: 767px) { /* For screens smaller than 768px */
+@media (max-width: 767px) { 
   .returnBtn {
-    width: fit-content; /* Use fit-content for smaller screens */
+    width: fit-content; 
   }
-}
-
-
-.container .visits {
-  /* Adjust styles for visits section */
-  margin-top: 20px; /* Add some separation from pet details */
-  border-top: 1px solid rgba(100, 148, 237, 0.52); /* Add a dividing line */
-  padding-top: 14px;
-
-   /* Enable Scrolling */
-   height: 2000px; /* Set a fixed height for the scrollable area */
-   overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.container .petPhoto {
-  height: 300px;
-  width: 300px;
-  /* Remove default background color */
-  /* background-color: #d6eadf00; */
-}
-
-.container .petPhoto img {
-  /* Option 1: Using width and height */
-  height: 100%;
-  width: auto;
-
-  /* Option 2: Using object-fit */
-  object-fit: cover;
-}
-
-.container h1 {
-  margin: 0;
-  font-size: 19px; /* Adjust as needed */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
 }
 
 .container p {
   width: 100%;
-  /* Adjust font size as needed */
-  /* line-height: 1.5rem; */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  word-break: break-all;
+  color: white;
   text-align-last: left;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-}
-
-.container div h4 {
-  font-size: 14px;
-  margin-bottom: 2px;
 }
 
 .container div h5 {
   font-size: 11px;
-}
-
-.container div > img {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
+  color: #0e0d0d;
 }
 
 .container div section img {
@@ -242,53 +160,43 @@ align-items: center;
 }
 
 .container span {
-  width: 100%;
   display: flex;
-	margin-top: 10px;
+	margin: 7px 0px 12px 0px;
   align-items: center;
 }
 
 .editBtn {
-  /* Use a CSS preprocessor for reusable button styles */
   margin: 0 8px;
   border: 1px solid rgb(203, 152, 0);
   padding: 0;
   width: 32px;
   height: 32px;
-  color: rgba(255, 255, 255, 0);
   cursor: pointer;
   box-shadow: none;
   font-weight: 600;
   border-radius: 50%;  
-
   width: 24px;
   height: 24px;
-  opacity: .25;
-  background-color: #583ee9;
-  color:rgb(203, 152, 0)
 }
 
 a img   {
   width: 30px;
   height: 30px;
-  background-color: #ffc107; /* Yellow color */
-  color: #fff; /* White text color */
-  border: none;
+  background-color: #ffbf00; 
   border-radius: 5px;
-  display: flex; /* Allow centering icon inside button */
-  justify-content: center; /* Center icon horizontally */
-  align-items: center; /* Center icon vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   transition: all 0.2s ease-in-out;
 }
 
 .createBtn:hover, .editBtn:hover  {
-  background-color: #ff9800; /* Slightly darker yellow on hover */
+  background-color: #ff9800; 
 }
 
-.createBtn svg, .editBtn svg { /* Assuming icons are SVGs */
-  width: 100%; /* Match button width */
-  height: 100%; /* Match button height */
-  fill: currentColor; /* Inherit button text color */
+.createBtn svg, .editBtn svg { 
+  width: 100%; 
+  height: 100%; 
 }
 
 .container button i {
@@ -303,36 +211,14 @@ a img   {
   font-weight: 600;
   border-radius: 50%;  
   background-color: #3e57e9;
-
   width: 24px;
   height: 24px;
-  opacity: .25;
 }
 
-.container span {
+.articleDetails {
   display: flex;
-  align-items: center;
-  margin: 7px 0px 12px 0px;
-  /* justify-content: space-around; */
-  /* width: 100%; */
-  display: flex;
-	margin-top: 10px;
-  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  line-height: 0px;
 }
-
-
-
-.container span button, .container span a  {
-  cursor: pointer;
-}
-
-.container > section article {
-  padding: 0;
-  width: 100%;
-  min-height: 140px;
-  border-radius: 5px;
-  margin: 4px 0px 14px;
-}
-
-/* Remove commented out Hoot CSS section */
 

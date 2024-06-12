@@ -1,11 +1,11 @@
 import { useState, useRef } from 'react'
-import { useParams } from 'react-router-dom';
-
-// css
-import styles from './NewVisit.module.css';
+import { useParams } from 'react-router-dom'
 
 // components
-import Icon from '../../components/Icon/Icon';
+import Icon from '../../components/Icon/Icon'
+
+// css
+import styles from './NewVisit.module.css'
 
 const NewVisit = ({ handleAddVisit }) => {
   const { petId } = useParams() // Extract petId from URL
@@ -26,8 +26,8 @@ const NewVisit = ({ handleAddVisit }) => {
     if (evt.target.name === 'visitDate') {
       const enteredDate = evt.target.value;
       if (enteredDate && enteredDate < today) {
-        setMessage("Please enter a date on or after today.");
-        return; // Prevent form update for invalid dates
+        setMessage("Please enter a date on or after today.")
+        return // Prevent form update for invalid dates
       }
     }
     setMessage('')
@@ -108,13 +108,12 @@ const NewVisit = ({ handleAddVisit }) => {
         <label htmlFor="visitDate-input">Visit Date</label>
         <input
           required
-          // allows users to select both date and time
           type="datetime-local"
           name="visitDate"
           id="visitDate-input"
           style={{ margin: '10px' }}
           value={formData.visitDate}
-          min={today} // Set minimum date to today
+          min={today}
           onChange={handleChange}
         />
         <label htmlFor="urgent-checkbox">Is Visit Urgent?</label>

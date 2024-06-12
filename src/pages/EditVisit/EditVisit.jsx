@@ -12,15 +12,15 @@ const EditVisit = () => {
   const { state } = useLocation()
   const { petId } = useParams()
   const [formData, setFormData] = useState(state)
-  const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().slice(0, 10)
 
   const handleChange = (evt) => {
     // Validate date input only if it's the visitDate field
     if (evt.target.name === 'visitDate') {
       const enteredDate = evt.target.value;
       if (enteredDate && enteredDate < today) {
-        alert("Please enter a date on or after today.");
-        return; // Prevent form update for invalid dates
+        alert("Please enter a date on or after today.")
+        return
       }
     }
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -33,7 +33,7 @@ const EditVisit = () => {
   }
 
   return (
-   <>
+  <>
       <form className={styles.container}
       onSubmit={handleSubmit}>
         <h1>Edit Visit Form</h1>
@@ -53,15 +53,15 @@ const EditVisit = () => {
           id="visitDate-input"
           value={formData.visitDate}
           placeholder="Visit Request Date"
-          min={today} // Set minimum date to today
+          min={today} 
           onChange={handleChange}
         />
         <label htmlFor="urgent-checkbox">Is Visit Urgent?</label>
         <input
+          // className={styles.checkbox}
           type="checkbox"
           name="urgent"
           id="urgent-checkbox"
-          style={{ margin: '10px' }}
           checked={formData.urgent}
           onChange={handleChange}
         />

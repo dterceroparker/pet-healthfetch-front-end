@@ -32,11 +32,11 @@ const PetList = (props) => {
         placeholder="Search pet members..."
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
-        /> {/* Search input */}
+      /> 
       {!filteredPets.length && <h2>Oops! No pets found!</h2>}
       </section>
       </header>
-      <ul>
+      <ul className={styles.ulPetlist}>
         {filteredPets.map((pet) => (
           <PetCard key={pet._id} pet={pet} user={props.user} />
         ))}

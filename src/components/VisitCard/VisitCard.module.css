@@ -1,36 +1,33 @@
-
-
 .container {
-  display: flex; /* Allow for potential future expansion */
-  flex-direction: column; /* Stack elements vertically */
-  padding: 20px; /* Add some padding for content breathing room */
-  border-radius: 4px; /* Subtle rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-  background-color: #ece6e63d; /* White background */
-  margin-bottom: 20px; /* Add spacing between cards */
+  display: flex; 
+  flex-direction: column; 
+  padding: 20px; 
+  border-radius: 4px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #ece6e63d; 
+  margin-bottom: 20px; 
 }
 
 .container h1 {
-  font-size: 20px; /* Adjust font size as needed */
+  font-size: 20px; 
   font-weight: bold;
-  margin-bottom: 10px; /* Add some space between heading and content */
+  margin-bottom: 10px; 
 }
 
 .container section {
-  display: flex; /* Arrange content horizontally */
-  flex-direction: column; /* Stack content vertically by default */
-  gap: 10px; /* Add spacing between content elements */
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
 }
 
 .container section p {
-  font-size: 16px; /* Adjust font size as needed */
-  margin: 0; /* Remove default margin for better spacing */
+  font-size: 16px; 
+  margin: 0; 
+  font-weight: 500;
 }
 
-/* Optional: Styling for urgency indicator */
-
 .container section p.urgent {
-  color: red; /* Highlight urgent visits */
+  color: red; 
 }
 
 .container span {
@@ -51,13 +48,12 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
+  border: 1px solid yellow;
 }
 
 .container header button img, .container header a img {
   width: 24px;
   height: 24px;
-  opacity: .25;
 }
 
 

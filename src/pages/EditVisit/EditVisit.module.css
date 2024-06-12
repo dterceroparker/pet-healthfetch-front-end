@@ -1,101 +1,95 @@
-/* General form styles */
 .container {
-  width: calc(100% - 40px); /* Responsive width based on viewport */
-  max-width: 500px; /* Set a maximum width for larger screens */
-  margin: 50px auto; /* Center the form horizontally */
+  width: calc(100% - 40px); 
+  max-width: 500px; 
+  margin: 50px auto; 
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  background-color: #f5f5f5; /* Light gray background */
-  display: flex; /* Flexbox for vertical layout */
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: space-between; /* Distribute elements evenly */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  background-color: #b4b7e88b; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  margin-top: 50px;
 }
 
-/* Responsive media queries for smaller screens */
 @media (max-width: 768px) {
   .container {
-    padding: 20px; /* Adjust padding on smaller screens */
+    padding: 20px; 
   }
 }
 
-
-/* Headings */
 h1 {
-  font-size: 24px; /* Larger heading for emphasis */
-  margin-bottom: 20px; /* Spacing after heading */
-  color: #333; /* Darker text for better contrast */
+  font-size: 24px; 
+  margin-bottom: 20px; 
+  color: #333; 
 }
 
-/* Labels */
 label {
-  font-weight: bold; /* Bold labels for readability */
-  margin-bottom: 5px; /* Spacing between label and input */
-  display: block; /* Display labels on their own line */
-  font-size: 14px; /* Slightly smaller font size for labels */
-  color: #333; /* Darker text for better contrast */
+  font-weight: bold; 
+  margin-bottom: 5px; 
+  display: block; 
+  font-size: 14px; 
+  color: #333; 
 }
 
-/* Form elements (inputs, textarea, select, button) */
 .container input,
 .container textarea,
 .container select,
 .container button {
-  width: 100%; /* Full width for most elements */
-  padding: 12px 15px; /* Consistent padding */
-  font-size: 16px; /* Consistent font size */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Rounded corners */
-  box-sizing: border-box; /* Include padding in width calculation */
-  margin-bottom: 15px; /* Spacing between elements */
-  font-family: Arial, sans-serif; /* Choose a professional font */
-  color: #333; /* Darker text for better contrast */
+  width: 100%; 
+  padding: 12px 15px; 
+  font-size: 16px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px; 
+  font-family: Arial, sans-serif; 
+  color: #333; 
 }
 
-/* Textarea with specific styles */
 .container textarea {
-  min-height: 80px; /* Minimum height for textarea */
+  min-height: 80px; 
 }
 
-/* Checkbox styles */
-input[type="checkbox"] {
-  appearance: none;
-  width: 18px; /* Consistent size */
-  height: 18px; /* Consistent size */
-  margin-right: 10px; /* Adjust margin for spacing */
-  outline: none;
+.checkbox {
+  width: 18px;
+  height: 18px;
+  appearance: none; 
+  border: 2px solid #ccc;
+  border-radius: 3px;
   cursor: pointer;
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 3px; /* Rounded corners */
-  background-color: #fff; /* White background */
+  transition: background 0.2s ease-in-out;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #2196f3; /* Blue background on checked */
-  border-color: #2196f3; /* Blue border on checked */
-  &::after {
-    content: "\2713"; /* Checkmark symbol (unicode) */
-    font-size: 12px;
-    color: #fff; /* White checkmark */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.checkbox:checked {
+  background-color: #4CAF50; 
+  border-color: #4CAF50;
 }
 
-/* Button styles */
-button[type="submit"] {
-  background-color: #2196f3; /* Blue background */
-  color: #fff; /* White text */
-  padding: 10px 20px; /* Consistent padding */
-  border: none; /* No border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Indicate hover interaction */
-  transition: all 0.2s ease-in-out; /* Smooth hover effect */
-  margin-top: 15px; /* Spacing above button */
+.checkbox:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin: 4px;
 }
 
-button[type="submit"]:hover {
-  background-color: #1779ba; /* Darker blue on hover */
+.container button {
+  height: 40px;
+  background-color: #2196f3; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: all 0.2s ease-in-out; 
+  margin: 0 auto
+
+}
+
+.container button.submitButton:hover {
+  background-color: #1779ba; 
 }
