@@ -1,5 +1,6 @@
 .container {
-  background-color: #d9a010c5; 
+  background: linear-gradient(to right, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
+  box-shadow: -1px 5px 19px -5px rgba(138, 127, 205, 0.082);
   transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -21,9 +22,22 @@
   gap: 10px;
 }
 
-.container .petDetails h2 {
+.container article h2 {
   margin-top: 0; 
   color:black;
+  font-size: 16px; 
+  margin: 0; 
+  font-weight: 500;
+}
+
+.container p {
+  font-size: 16px; 
+  margin: 0; 
+  font-weight: 500;
+  color: black;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
 }
 
 .container .petDetails img {

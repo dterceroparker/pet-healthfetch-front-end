@@ -24,17 +24,21 @@ const VisitCard = ({ visit, petId, handleDeleteVisit, dateFormat = 'yyyy-LL-dd H
         <p>Visit Reason: {visit.visitReason}</p>
         <p>Visit Date & Time: {formatVisitDate(visit.visitDate)}</p>
         <p>Is Visit Urgent?: {visit.urgent ? 'Yes' : 'No'}</p>
+        <div className={styles.visitPhoto} 
+        key={visit.photo} >
+        <img id={styles.petPhoto} src={visit.photo} alt="A photo of this puppy" />
+        </div>
       </section>
         <header>
       <span>
-        <>
+      <>
         <NavLink to={`/pets/${petId}/visits/edit`} state={visit}>
           <Icon category='Edit'  />
         </NavLink>
         <button  onClick={() => handleDeleteVisit(petId, visit._id)} >
           <Icon category='Trash' />
         </button>
-        </>
+      </>
       </span>
       </header>
     </article>

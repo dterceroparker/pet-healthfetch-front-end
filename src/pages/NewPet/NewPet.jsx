@@ -27,7 +27,6 @@ const NewPet = ({ handleAddPet }) => {
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
   
-
   const handleSubmit = async evt => {
     console.log({formData})
     evt.preventDefault()
@@ -85,7 +84,7 @@ const NewPet = ({ handleAddPet }) => {
   }
 
   return (
-    <main className={styles.container}>
+  <main className={styles.container}>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
       <h1>New Pet Form</h1>
@@ -227,8 +226,8 @@ const NewPet = ({ handleAddPet }) => {
             type='submit'
           >
             {!isSubmitted ? 'Register Pet-ient' : '🚀 Sending...'}
-          </button>
-          <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
+        </button>
+        <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
         </>
       </form>
     </main>

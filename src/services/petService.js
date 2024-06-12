@@ -122,7 +122,7 @@ async function createVisit(visitFormData, petId, photoData) {
       body: JSON.stringify(visitFormData)
     })
     const json = await res.json()
-    console.log("JSON FROM PETSERVICE.CREATE", {json})
+    console.log("JSON FROM PETSERVICE.CREATEVISIT", {json})
     if (json.err) throw new Error(json.err)
 
     if (photoData) {
@@ -141,7 +141,7 @@ async function addVisitPhoto(photoData, petId) {
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
     console.log("[ADD VISIT PHOTO]", "GOING TO SEND TO BACKEND", {photoFormData, petId})
-    const res = await fetch(`${BASE_URL}/${petId}/add-visit-photo`, {
+    const res = await fetch(`${BASE_URL}/${petId}/add-photo`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -149,9 +149,7 @@ async function addVisitPhoto(photoData, petId) {
       body: photoFormData,
     })
     const json = res.json();
-
     console.log("[ADD VISIT PHOTO]", "RESULT OF ADDVISITPHOTO", {json})
-
     return json
   } catch (err) {
     throw new Error(err)
