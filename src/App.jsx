@@ -76,7 +76,6 @@ function App() {
     }
   }
 
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />

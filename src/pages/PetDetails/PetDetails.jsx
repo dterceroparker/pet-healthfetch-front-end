@@ -1,15 +1,10 @@
-//npm modules\
 import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom"
-//services
 import * as petService from '../../services/petService'
-//components
 import Loading from '../Loading/Loading'
 import OwnerInfo from '../../components/OwnerInfo/OwnerInfo'
 import Icon from '../../components/Icon/Icon'
 import Visits from '../../components/Visits/Visits'
-
-// css
 import styles from './PetDetails.module.css'
 
 
@@ -37,15 +32,14 @@ const PetDetails = (props) => {
     <main className={styles.container}>
       {pet.owner && props.user && pet.owner._id === props.user.profile ? ( 
       <>
-      <div className={styles.details} 
-        key={pet.photo} >
+      <div className={styles.details} key={pet.photo} >
         <img id={styles.petPhoto} src={pet.photo} alt="A photo of this puppy" />
-      <div className={styles.rightPanel}>
+      <div className={styles.rightPanel}
+      >
       <header className={styles.detailsHeader}>
         <OwnerInfo content={pet} />
       <h1>Pet Information</h1>
       </header>
-      
       <article className={styles.articleDetails}>
           <h5>Name: {pet.name.toUpperCase()}</h5>
           <h5>Phone Number: {pet.phone}</h5>

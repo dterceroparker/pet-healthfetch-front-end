@@ -1,6 +1,4 @@
-//assets
 import logo from '../../assets/branding/logo.png'
-// css
 import styles from './Landing.module.css'
 
 const Landing = () => {

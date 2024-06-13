@@ -1,23 +1,32 @@
 .container {
-  /* opacity: 0.8; */
   display: flex;
   align-items: center;
-}
-
-.container img {
-  width: 17px;
-  height: 17px;
-  /* margin-right: 2px; */
-  /* margin-left: -2px; */
-}
-
-/* DateCard.module.css */
-.container {
-  /* ... previous styles */
-  transition: background-color 0.2s ease-in-out; /* Enables smooth transition */
+  justify-content: flex-start; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #ffffff56; 
+  transition: all 0.2s ease-in-out; 
 }
 
 .container:hover {
-  background-color: #e8e8e8; /* Slightly darker shade on hover */
-  cursor: default; /* Maintain default cursor style */
+  background-color: #f3e011; 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.container h5 { 
+  margin: 0 5px; 
+  font-weight: 400; 
+  color: #333; 
+}
+
+.container svg { 
+  width: 18px; 
+  height: 18px;
+  fill: #333; 
+  transition: transform 0.2s ease-in-out; 
+}
+
+.container:hover svg {
+  transform: scale(1.1); 
 }

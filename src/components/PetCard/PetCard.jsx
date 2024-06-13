@@ -1,9 +1,4 @@
-// npm modules
 import { NavLink } from 'react-router-dom'
-
-// components
-
-// css
 import styles from './PetCard.module.css'
 
 const PetCard = ({ pet }) => {

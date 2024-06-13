@@ -1,8 +1,5 @@
-// npm modules
 import { useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-
-//css
 import styles from './EditPet.module.css'
 
 const EditPet = (props) => {

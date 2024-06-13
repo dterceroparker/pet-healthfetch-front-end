@@ -1,11 +1,5 @@
-// npm modules
 import { useState, useEffect } from 'react'
-
-// services
 import * as profileService from '../../services/profileService'
-
-
-// css
 import styles from './Profiles.module.css'
 
 const Profiles = () => {
@@ -31,7 +25,6 @@ const Profiles = () => {
       {profiles.length ? (
         <section className={styles.profiles}>
           <ul>
-          {/* Map over profiles to display cards */}
           {profiles.map(profile => (
             <article key={profile._id} className={styles.profile}>
               <img src={profile.photo} alt="Profile Picture" />

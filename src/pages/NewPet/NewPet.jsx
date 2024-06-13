@@ -1,8 +1,5 @@
-//npm modules
 import { useState, useRef } from 'react'
 import { useNavigate } from "react-router-dom"
-
-// css
 import styles from './NewPet.module.css'
 
 const NewPet = ({ handleAddPet }) => {

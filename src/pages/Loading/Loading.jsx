@@ -1,7 +1,4 @@
-// assets
 import logo from '../../assets/branding/logo.png'
-
-// css
 import styles from './Loading.module.css'
 
 const Loading = () => {

@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 21px; /* Combine top padding and positioning */
+  padding: 14px 21px; 
   width: 100%;
   position: fixed;
   top: 0;

@@ -1,10 +1,6 @@
-// components
 import DateCard from '../DateCard/DateCard'
-// assets
 import profileIcon from '../../assets/icons/profile.png'
-// css
 import styles from './OwnerInfo.module.css'
-
 
 const OwnerInfo = ({ content }) => {
 console.log({content})

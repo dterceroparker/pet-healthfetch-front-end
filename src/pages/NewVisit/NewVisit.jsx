@@ -1,10 +1,6 @@
 import { useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
-
-// components
 import Icon from '../../components/Icon/Icon'
-
-// css
 import styles from './NewVisit.module.css'
 
 const NewVisit = ({ handleAddVisit }) => {

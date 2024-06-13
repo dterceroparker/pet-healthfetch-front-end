@@ -1,17 +1,11 @@
-// npm modules
 import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
-// services
 import * as authService from '../../services/authService'
-
-// css
 import styles from './Signup.module.css'
 
 const Signup = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
   const imgInputRef = useRef(null)
-
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     name: '',

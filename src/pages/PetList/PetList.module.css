@@ -43,16 +43,20 @@
 }
 
 .searchInput {
-  background-color: #ffffff72; 
-  border: none; 
+  background-color: #99cdf3; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 8px 10px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out; 
 }
 
 .searchInput:focus {
-  transform: scale(1.02); 
+  outline: 2px solid #333; 
 }
 
 .searchInput:hover {
-  cursor: pointer; 
+  cursor: text; 
+  background-color: #fecb6d8c; 
 }
+

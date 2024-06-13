@@ -1,4 +1,3 @@
-// assets
 import add from '../../assets/icons/add.svg'
 import edit from '../../assets/icons/edit.svg'
 import trash from '../../assets/icons/trash.svg'
@@ -13,7 +12,6 @@ const Icon = ({ category }) => {
     Calendar: calendar,
     Create: create,
   }
-
   return (
     <img className="icon" src={icons[category]} alt={`A ${category} icon.`} />
   )

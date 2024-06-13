@@ -1,7 +1,4 @@
-// assets
 import toodles from '../../assets/branding/toodles.svg'
-
-// css
 import styles from './Logout.module.css'
 
 const Logout = () => {
