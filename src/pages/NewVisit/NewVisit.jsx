@@ -39,6 +39,7 @@ const NewVisit = ({ handleAddVisit }) => {
     try {
       setIsSubmitted(true)
       await handleAddVisit(formData, petId, photoData.photo )
+      imgInputRef.current.value = null
       setFormData({
         photo: '',
         visitReason: '',
@@ -61,30 +62,34 @@ const NewVisit = ({ handleAddVisit }) => {
   }
   
   const handleChangePhoto = evt => {
-    const file = evt.target.files[0]
-    let isFileInvalid = false
-    let errMsg = ""
-    const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
-    const photoFormat = file.name.split('.').at(-1)
-
-    // cloudinary supports files up to 10.4MB each as of May 2023
-    if (file.size >= 10485760) {
-      errMsg = "Image must be smaller than 10.4MB"
-      isFileInvalid = true
+    if (evt.target.files.length) {
+      const file = evt.target.files[0]
+      let isFileInvalid = false
+      let errMsg = ""
+      const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
+      const photoFormat = file.name.split('.').at(-1)
+  
+      // cloudinary supports files up to 10.4MB each as of May 2023
+      if (file.size >= 10485760) {
+        errMsg = "Image must be smaller than 10.4MB"
+        isFileInvalid = true
+      }
+      if (!validFormats.includes(photoFormat)) {
+        errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+        isFileInvalid = true
+      }
+      
+      setMessage(errMsg)
+      
+      if (isFileInvalid) {
+        imgInputRef.current.value = null
+        return
+      }
+  
+      setPhotoData({ photo: evt.target.files[0] })
+    } else {
+      setPhotoData({ photo: null})
     }
-    if (!validFormats.includes(photoFormat)) {
-      errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
-      isFileInvalid = true
-    }
-    
-    setMessage(errMsg)
-    
-    if (isFileInvalid) {
-      imgInputRef.current.value = null
-      return
-    }
-    console.log({photo: evt.target.files})
-    setPhotoData({ photo: evt.target.files[0] })
   }
 
   return (
@@ -134,7 +139,7 @@ const NewVisit = ({ handleAddVisit }) => {
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
-          <button disabled={ isSubmitted }
+          <button disabled={ isSubmitted || !imgInputRef.current?.value}
               type='submit' className={styles.submitButton} >
             <Icon category="Create" />
             {!isSubmitted ? '' : '🚀 Sending...'}

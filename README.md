@@ -1,7 +1,7 @@
 # `Pet HealthFetch App`
 ***
 
-<!-- ![Image 1](public/assets/image/readme.png) -->
+![Image 1](src/assets/images/Landing.png)
 <!-- ![Image 2](public/assets/image/readmeimage.png) -->
 
 ---
@@ -25,9 +25,9 @@
 
 ### `Icebox Items`
 
-- [x] AAU, I should be able to add multiple photos to visitCard component. 
-- [x] AAU, I should be able to communicate directly with vet and admin.
-- [x] AAU, I should be able to communicate with pet owners re. pet health elixir/cures.
+- [x] AAU, I should be able to add multiple photos to visit card component. 
+- [x] AAU, I should be able to communicate directly with the vet and admin.
+- [x] AAU, I should be able to communicate with pet owners regarding pet health elixir/cures.
 
 ---
 
@@ -52,6 +52,7 @@
 
 ### `Attribution Links`
 
+- [x] [BrandCrowd](https://www.brandcrowd.com/) <br>
 - [x] [Coolors.co](https://coolors.co/gradients) <br>
 - [x] [Favicon.cc](https://www.favicon.cc/) <br>
 - [x] [Favicon.io](https://favicon.io/) <br>

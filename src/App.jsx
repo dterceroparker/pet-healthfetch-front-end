@@ -65,7 +65,7 @@ function App() {
   }
 
   const handleAddVisit = async (visitFormData, petId, photoData) => {
-    console.log("** Adding visit for pet ID:**", petId)
+    console.log("** App.jsx handleAddVisit:**", visitFormData, petId, photoData)
     try {
       await petService.createVisit(visitFormData, petId, photoData)
       console.log("** Adding visit for pet")

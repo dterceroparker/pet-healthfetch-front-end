@@ -1,4 +1,3 @@
-// services
 import * as tokenService from './tokenService'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/pets`
@@ -14,17 +13,6 @@ async function index() {
   }
 }
 
-// async function show(petId) {
-//   try {
-//     const res = await fetch(`${BASE_URL}/${petId}`, {
-//       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
-//     })
-//     return res.json()
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-
 async function show(petId) {
   try {
     const res = await fetch(`${BASE_URL}/${petId}`, {
@@ -34,20 +22,18 @@ async function show(petId) {
       if (!res.ok) {
       throw new Error(`Error fetching pet details: ${res.status}`)
     }
-
     const json = await res.json()
-    console.log("API response for pet details:", json) // Log the entire response (for debugging)
+    // Log the entire response (for debugging)
+    console.log("API response for pet details:", json) 
     return json
   } catch (error) {
-    console.error("Error fetching pet details:", error) // Log the error details
-    throw error; // Re-throw the error for handling in the calling component
+    console.error("Error fetching pet details:", error)
+    throw error
   }
 }
 
-
 async function create(petFormData, photoData) {
   try {
-    console.log("PETSERVICE.CREATE", {petFormData, photoData})
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {
@@ -57,11 +43,8 @@ async function create(petFormData, photoData) {
       body: JSON.stringify(petFormData)
     })
     const json = await res.json()
-    console.log("JSON FROM PETSERVICE.CREATE", {json})
     if (json.err) throw new Error(json.err)
-
     if (photoData) {
-      console.log("CALLING ADDPHOTO WITH", {photoData, id: json._id})
       await addPhoto(photoData, json._id)
     }
     return json
@@ -72,7 +55,6 @@ async function create(petFormData, photoData) {
 
 async function update(petFormData) {
   try {
-    console.log("first update", {petFormData: petFormData})
     const res = await fetch(`${BASE_URL}/${petFormData._id}`, {
       method: 'PUT',
       headers: {
@@ -89,10 +71,8 @@ async function update(petFormData) {
 
 async function addPhoto(photoData, petId) {
   try {
-    console.log("INSIDE ADDPHOTO WITH", {photoData, petId})
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
-    console.log("GOING TO SEND TO BACKEND", {photoFormData, petId})
     const res = await fetch(`${BASE_URL}/${petId}/add-photo`, {
       method: 'PUT',
       headers: {
@@ -100,10 +80,7 @@ async function addPhoto(photoData, petId) {
       },
       body: photoFormData,
     })
-    const json = res.json();
-
-    console.log("RESULT OF ADDPHOTO", {json})
-
+    const json = res.json()
     return json
   } catch (err) {
     throw new Error(err)
@@ -112,7 +89,6 @@ async function addPhoto(photoData, petId) {
 
 async function createVisit(visitFormData, petId, photoData) {
   try {
-    console.log("** Provided createVisit pet ID:**", petId)
     const res = await fetch(`${BASE_URL}/${petId}/visits`, {
       method: 'POST',
       headers: {
@@ -122,54 +98,22 @@ async function createVisit(visitFormData, petId, photoData) {
       body: JSON.stringify(visitFormData)
     })
     const json = await res.json()
-    console.log("JSON FROM PETSERVICE.CREATEVISIT", {json})
     if (json.err) throw new Error(json.err)
     if (photoData) {
-      console.log("CALLING ADDVISITPHOTO WITH", {photoData, visitId: json._id})
-      // Check if visitId exists before calling addVisitPhoto
-      if (!json._id) {
-        throw new Error("Failed to create visit - missing visit ID")
-      }
-      await addVisitPhoto(photoData, json._id)
+      // Extract visitId from the response
+      const visitId = json._id 
+      await addVisitPhoto(visitId, petId, photoData)
     }
     return json
   } catch (error) {
-    console.log(error)
+    console.error('Error creating visit:', error)
   }
 }
 
-
-// async function addVisitPhoto(photoData, petId) {
-//   try {
-//     console.log("[ADD VISIT PHOTO]", "INSIDE ADDVISITPHOTO WITH", {photoData, petId})
-//     const photoFormData = new FormData()
-//     photoFormData.append('photo', photoData)
-//     console.log("[ADD VISIT PHOTO]", "GOING TO SEND TO BACKEND", {photoFormData, petId})
-//     const res = await fetch(`${BASE_URL}/${petId}/visits/add-visit-photo`, {
-//       method: 'PUT',
-//       headers: {
-//         'Authorization': `Bearer ${tokenService.getToken()}`,
-//       },
-//       body: photoFormData,
-//     })
-//     const json = res.json();
-//     console.log("[ADD VISIT PHOTO]", "RESULT OF ADDVISITPHOTO", {json})
-//     return json
-//   } catch (err) {
-//     throw new Error(err)
-//   }
-// }
-
-async function addVisitPhoto(photoData, petId, visitId) {
+async function addVisitPhoto(visitId, petId, photoData ) {
   try {
-    console.log("[ADD VISIT PHOTO]", "INSIDE ADDVISITPHOTO WITH", {photoData, petId, visitId})
-
     const photoFormData = new FormData()
     photoFormData.append('photo', photoData)
-    // If visitId is still undefined, there might be an issue with how the data is being passed or handled before reaching createVisit
-    console.log("[ADD VISIT PHOTO]", "GOING TO SEND TO BACKEND", {photoFormData, petId, visitId})
-
-    // Update the URL to include the specific visit ID
     const res = await fetch(`${BASE_URL}/${petId}/visits/${visitId}/add-visit-photo`, {
       method: 'PUT',
       headers: {
@@ -177,15 +121,12 @@ async function addVisitPhoto(photoData, petId, visitId) {
       },
       body: photoFormData,
     })
-    console.log('AddVisitPhoto visitId:', {visitId})
     const json = res.json();
-    console.log("[ADD VISIT PHOTO]", "RESULT OF ADDVISITPHOTO", {json})
     return json
   } catch (err) {
     throw new Error(err)
   }
 }
-
 
 const updateVisit = async (petId, visitFormData) => {
   try {
@@ -218,14 +159,14 @@ const deleteVisit = async (petId, visitId) => {
 }
 
 export {
+  addPhoto,
+  create,
   index,
   show,
-  create,
   update,
-  addPhoto,
 
-  createVisit,
   addVisitPhoto,
-  updateVisit,
+  createVisit,
   deleteVisit,
+  updateVisit
 }
