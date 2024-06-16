@@ -49,7 +49,7 @@
 .about {
   height: 60vh;
   width: 80%; 
-  overflow-y: auto;
+  /* overflow-y: auto; */
   margin: 0 auto; 
   padding: 2rem 1rem;; 
   display: flex;
