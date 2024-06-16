@@ -41,6 +41,11 @@ const NavBar = ({ user, handleLogout }) => {
           <i className='fas fa-solid fa-door-open'></i>
         </NavLink> 
       </li>
+      <li>
+        <NavLink to='/auth/change-password'>
+          Change Password
+        </NavLink> 
+      </li>
     </ul>
   )
   return (

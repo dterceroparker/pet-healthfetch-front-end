@@ -1,4 +1,3 @@
-// npm modules
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -40,39 +39,41 @@ const ChangePassword = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
-      <h1>Change Password</h1>
+    <main className={`${styles.container} ${styles.center}`}>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Current Password
+      <h1>Change Password</h1>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Current Password</label>
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
           />
-        </label>
-        <label className={styles.label}>
-          New Password
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>New Password</label>
           <input
             type="password"
             value={newPassword}
             name="newPassword"
             onChange={handleChange}
           />
-        </label>
-        <label className={styles.label}>
-          Confirm New Password
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Confirm New Password</label>
           <input
             type="password"
             value={newPasswordConf}
             name="newPasswordConf"
             onChange={handleChange}
           />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button>
+            <Link to="/">Cancel</Link>
+          </button>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password
           </button>
