@@ -87,6 +87,14 @@
   border: 1px solid rgb(220, 220, 220); 
 }
 
+.about article h4 {
+  font-size: 1.1rem; /* Adjust as needed */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Adjust as needed */
+  color: #f0e0d6; /* Adjust to match your color scheme */
+  text-align: center; /* Adjust if needed */
+}
+
 .container footer {
   margin: 0;
   width: 100%;
