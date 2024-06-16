@@ -3,7 +3,8 @@
 
 ![Image 1](src/assets/images/Landing.png)
 ![Image 2](src/assets/images/PetList.png)
-![Image 3](src/assets/images/VisitCard.png)
+![Image 3](src/assets/images/PetCard.png)
+![Image 4](src/assets/images/VisitCard.png)
 
 ---
 
