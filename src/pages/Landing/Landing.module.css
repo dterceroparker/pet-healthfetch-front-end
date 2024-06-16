@@ -49,7 +49,7 @@
 .about {
   height: 70vh;
   width: 80%; 
-  /* overflow-y: auto; */
+  overflow-y: auto;
   margin: 0 auto; 
   padding: 2rem 1rem;; 
   display: flex;
@@ -71,7 +71,6 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 0;
-  overflow: hidden;
 }
 
 .about article p {
@@ -91,6 +90,8 @@
   box-shadow: 0 15px 40px rgba(35, 106, 150, 0.728);
   box-sizing: border-box;
   border: 1px solid rgb(220, 220, 220); 
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .about article h4 {
