@@ -16,8 +16,8 @@
 }
 
 .container section > img {
-  width: 150px;
-  height: 150px;
+  width: 20%;
+  height: auto;
   border-radius: 50%;
   margin: auto;
   margin-bottom: 30px;
