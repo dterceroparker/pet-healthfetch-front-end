@@ -4,12 +4,6 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .container section > img {
-    width: 80%; 
-  }
-}
-
 .container {
   min-height: calc(100vh - 75px);
   max-width: 100%;
@@ -19,22 +13,31 @@
   flex-direction: column;
 }
 
+.splash {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.splash img {
+  max-width: 80%; 
+  margin: 0 auto;
+}
+
 .container > section {
   width: 100%;
   display: flex;
   align-items: center;
-  aspect-ratio: 16/9;
   flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .container section > img {
-  width: 60%;
+  width: 20%;
   height: auto;
   border-radius: 50%;
-  margin: auto;
-  margin-bottom: 30px;
-  margin: 30px auto 30px 0;
+  margin: 0 auto;
   box-shadow: 0 20px 20px rgba(35, 106, 150, 0.728);
   background: hsla(39, 100%, 71%, 1);
   background: linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
@@ -62,7 +65,7 @@
   width: 100%;
   max-width: unset;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,9 +74,10 @@
 }
 
 .about article p {
-  color:rgb(245, 240, 240);
+  font-family: Arial, sans-serif;  
+  font-size: 1rem;                  
+  line-height: 1.5;                
   font-weight: 500;
-  line-height: 1.5;
   text-align: justify;
   margin: 0;
   width: 100%;
@@ -81,6 +85,7 @@
   padding: 1rem;
   letter-spacing: 1px;
   border-radius: 10px;
+  color:rgb(245, 240, 240);
   box-shadow: 3px 3px rgba(47, 0, 255, 0.011), -.3em 0 .4em #348bd22d;
   box-shadow: 0 15px 40px rgba(35, 106, 150, 0.728);
   box-sizing: border-box;
@@ -88,11 +93,13 @@
 }
 
 .about article h4 {
-  font-size: 1.1rem; /* Adjust as needed */
+  font-family: Georgia, serif;     
+  font-size: 1.2rem;               
+  margin-bottom: 1.5rem;   
   font-weight: bold;
-  margin-bottom: 1rem; /* Adjust as needed */
-  color: #f0e0d6; /* Adjust to match your color scheme */
-  text-align: center; /* Adjust if needed */
+  margin-bottom: 1rem; 
+  color: #f0e0d6; 
+  text-align: center; 
 }
 
 .container footer {
@@ -144,7 +151,11 @@
   .about {
     height: 660px;
   }
+  .splash img {
+    max-width: 300px; 
+  }
+  
   .container section > img {
-    min-width: 340px;
+    min-width: 280px;  
   }
 }
