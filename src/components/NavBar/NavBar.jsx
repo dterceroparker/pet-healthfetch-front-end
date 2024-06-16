@@ -43,7 +43,7 @@ const NavBar = ({ user, handleLogout }) => {
       </li>
       <li>
         <NavLink to='/auth/change-password'>
-          Change Password
+          <i className="fa-solid fa-lock"></i>
         </NavLink> 
       </li>
     </ul>

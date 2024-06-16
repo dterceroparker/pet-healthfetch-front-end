@@ -6,6 +6,7 @@ const Profiles = () => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
       setProfiles(profileData)
