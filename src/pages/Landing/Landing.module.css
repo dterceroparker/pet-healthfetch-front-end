@@ -47,7 +47,7 @@
 }
 
 .about {
-  height: 70vh;
+  height: 80vh;
   width: 80%; 
   overflow-y: auto;
   margin: 0 auto; 
@@ -90,8 +90,6 @@
   box-shadow: 0 15px 40px rgba(35, 106, 150, 0.728);
   box-sizing: border-box;
   border: 1px solid rgb(220, 220, 220); 
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .about article h4 {
