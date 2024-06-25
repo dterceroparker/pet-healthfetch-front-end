@@ -37,13 +37,13 @@ const NavBar = ({ user, handleLogout }) => {
         </NavLink>
       </li>
       <li>
-        <NavLink to='/auth/logout' onClick={handleLogout}>
-          <i className='fas fa-solid fa-door-open'></i>
+        <NavLink to='/auth/change-password'>
+          <i className="fa-solid fa-lock"></i>
         </NavLink> 
       </li>
       <li>
-        <NavLink to='/auth/change-password'>
-          <i className="fa-solid fa-lock"></i>
+        <NavLink to='/auth/logout' onClick={handleLogout}>
+          <i className='fas fa-solid fa-door-open'></i>
         </NavLink> 
       </li>
     </ul>
