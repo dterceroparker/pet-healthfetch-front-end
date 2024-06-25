@@ -14,14 +14,12 @@
 }
 
 .splash {
+  margin-top: 50px;
   display: flex; 
   justify-content: center; 
   align-items: center; 
 }
 
-.splash img {
-  margin-bottom: 10px;  
-}
 
 .container > section {
   width: 100%;
@@ -29,7 +27,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .container section > img {
@@ -41,7 +38,7 @@
   box-shadow: 0 20px 20px rgba(35, 106, 150, 0.728);
   background: hsla(39, 100%, 71%, 1);
   background: linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
-  object-fit: cover;  
+
 }
 
 .about {
@@ -59,7 +56,7 @@
 }
 
 .about article {
-  width: 100%;
+  width: 90%;
   max-width: unset;
   margin: 0;
   padding: 2rem;
