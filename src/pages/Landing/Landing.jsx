@@ -10,7 +10,7 @@ const Landing = () => {
       </section>
       <section className={styles.about}>
         <article>
-          <h5>**Haven't registered your pet yet? Log in and head over to the "New Pet Form" icon in the header to get started!**
+          <h5>**Haven't registered your pet yet? Log in and access the "New Pet Form" from the header to get started!**
           </h5>
           <p>
           Pet HealthFetch is your one-stop solution for all your pet healthcare needs! Say goodbye to the hassle of texting your vet - our app makes managing your pet's health effortless. With just a few taps on your phone, members can create a profile for their beloved pets, including a snapshot of their medical records, and easily request visits. 
