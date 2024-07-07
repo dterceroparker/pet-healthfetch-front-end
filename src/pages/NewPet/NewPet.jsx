@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react'
-import { useNavigate } from "react-router-dom"
-import styles from './NewPet.module.css'
+import { useState, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
+import styles from './NewPet.module.css';
 
 const NewPet = ({ handleAddPet }) => {
   const navigate = useNavigate()
@@ -11,7 +11,7 @@ const NewPet = ({ handleAddPet }) => {
     name: '',
     phone: '',
     address: '',
-    birthDate: new Date(),
+    birthDate: new Date().toISOString().split('T')[0],
     breed: '',
     color: '',
     sex: 'Female',
@@ -25,11 +25,9 @@ const NewPet = ({ handleAddPet }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   
   const handleSubmit = async evt => {
-    console.log({formData})
     evt.preventDefault()
     try {
       setIsSubmitted(true)
-      console.log({photoData})
       await handleAddPet(formData, photoData.photo)
     } catch (err) {
       console.log(err)
@@ -58,13 +56,14 @@ const NewPet = ({ handleAddPet }) => {
     let isFileInvalid = false
     let errMsg = ""
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
-    const photoFormat = file.name.split('.').at(-1)
+    const photoFormat = file.name.split('.').pop().toLowerCase()
 
-    // cloudinary supports files up to 10.4MB each as of May 2023
+    // Check file size
     if (file.size >= 10485760) {
       errMsg = "Image must be smaller than 10.4MB"
       isFileInvalid = true
     }
+    // Check file format
     if (!validFormats.includes(photoFormat)) {
       errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
       isFileInvalid = true
@@ -76,15 +75,15 @@ const NewPet = ({ handleAddPet }) => {
       imgInputRef.current.value = null
       return
     }
-    console.log({photo: evt.target.files})
-    setPhotoData({ photo: evt.target.files[0] })
+    
+    setPhotoData({ photo: file })
   }
 
   return (
-  <main className={styles.container}>
+    <main className={styles.container}>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-      <h1>New Pet Form</h1>
+        <h1>New Pet Form</h1>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -96,37 +95,37 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="phone-input">Phone</label>
-				<input
+        <input
           required
-          type="text"
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           name="phone"
           id="phone-input"
           value={formData.phone}
-          placeholder="Please use XXX-XXX-XXXX format"
+          placeholder="XXX-XXX-XXXX format"
           onChange={handleChange}
         />
         <label htmlFor="address-input">Address</label>
-				<input
+        <input
           required
           type="text"
           name="address"
           id="address-input"
           value={formData.address}
-          placeholder="Please include street, city, state, and zip code"
+          placeholder="Street, City, State, Zip Code"
           onChange={handleChange}
         />
         <label htmlFor="birthDate-input">Birthdate</label>
-				<input
+        <input
           required
           type="date"
           name="birthDate"
           id="birthDate-input"
           value={formData.birthDate}
-          placeholder="Birthdate"
           onChange={handleChange}
         />
         <label htmlFor="breed-input">Breed</label>
-				<input
+        <input
           required
           type="text"
           name="breed"
@@ -136,7 +135,7 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="color-input">Color</label>
-				<input
+        <input
           required
           type="text"
           name="color"
@@ -159,7 +158,7 @@ const NewPet = ({ handleAddPet }) => {
           <option value="Neutered">Neutered</option>
         </select>
         <label htmlFor="elixir-input">Elixir</label>
-				<input
+        <input
           required
           type="text"
           name="elixir"
@@ -169,7 +168,7 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="medicalHistory-input">Medical History</label>
-				<input
+        <input
           required
           type="text"
           name="medicalHistory"
@@ -179,7 +178,7 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="medications-input">Medications</label>
-				<input
+        <input
           required
           type="text"
           name="medications"
@@ -189,7 +188,7 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="allergies-input">Allergies</label>
-				<input
+        <input
           required
           type="text"
           name="allergies"
@@ -199,7 +198,7 @@ const NewPet = ({ handleAddPet }) => {
           onChange={handleChange}
         />
         <label htmlFor="vetName-input">Vet Name</label>
-				<input
+        <input
           required
           type="text"
           name="vetName"
@@ -208,7 +207,7 @@ const NewPet = ({ handleAddPet }) => {
           placeholder="Vet Name"
           onChange={handleChange}
         />
-        <label className={styles.photo} >
+        <label className={styles.photo}>
           Upload Photo
           <input 
             type="file" 
@@ -218,13 +217,13 @@ const NewPet = ({ handleAddPet }) => {
           />
         </label>
         <>
-        <button
+          <button
             disabled={ isFormInvalid() || isSubmitted }
-            type='submit'
+            type="submit"
           >
             {!isSubmitted ? 'Register Pet-ient' : '🚀 Sending...'}
-        </button>
-        <button onClick={handleNavigateHome} className='cancel-btn'>Cancel</button>
+          </button>
+          <button onClick={handleNavigateHome} className="cancel-btn">Cancel</button>
         </>
       </form>
     </main>
