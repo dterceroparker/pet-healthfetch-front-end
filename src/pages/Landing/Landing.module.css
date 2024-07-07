@@ -23,16 +23,15 @@
 }
 
 .container section > img {
-  width: 150px; 
-  height: 150px; 
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-
 .about {
-  height: 80vh;
+  height: auto;
   width: 100%;
   overflow-y: auto;
   margin: 0 auto;
@@ -47,17 +46,18 @@
 
 .about::-webkit-scrollbar {
   width: 8px;
-  background-color: #2d76b241; 
+  background-color: #2d76b241;
 }
 
 .about::-webkit-scrollbar-thumb {
-  background-color: #3498db; 
-  border-radius: 10px; 
+  background-color: #3498db;
+  border-radius: 10px;
 }
 
 .about article {
-  width: 90%;
-  margin: 0;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -97,9 +97,6 @@
   border-top: 1px dashed rgb(9, 165, 217);
   color: #fafafa;
   margin-top: 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   text-align: center;
 }
 
@@ -112,24 +109,21 @@
 
 @media only screen and (max-width: 1024px) {
   .about {
-    height: 420px;
+    padding: 1rem;
+  }
+  .about article p {
+    font-size: 0.9rem; 
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .about {
-    padding: 1rem;
-  }
   .about article p {
-    font-size: 0.9rem;
+    font-size: 0.85rem; 
   }
 }
 
 @media only screen and (max-width: 414px) {
-  .about {
-    height: 660px;
-  }
-  .splash img {
-    max-width: 300px;
+  .about article p {
+    font-size: 0.8rem; 
   }
 }
