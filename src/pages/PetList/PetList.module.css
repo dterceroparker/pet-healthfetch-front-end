@@ -32,7 +32,7 @@
 .listHeader h1 {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #fbfbfb;
 }
 
 .searchInput {
@@ -64,7 +64,7 @@
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 0 auto; /* Centering the grid */
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  overflow: hidden; /* Ensures image scaling doesn't affect layout */
+  overflow: hidden; 
 }
 
 .ulPetlist li:hover {
@@ -96,11 +96,11 @@
   height: 180px;
   object-fit: cover;
   border-radius: 5px;
-  transition: transform 0.2s ease-in-out; /* Adding transition for scaling */
+  transition: transform 0.2s ease-in-out; 
 }
 
 .ulPetlist li:hover .petImage {
-  transform: scale(1.1); /* Scale up the image on hover */
+  transform: scale(1.1); 
 }
 
 @media only screen and (max-width: 768px) {
