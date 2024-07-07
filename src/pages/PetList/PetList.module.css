@@ -1,62 +1,110 @@
-.container .listHeader {
-  background-color: #ffffff72; 
+.container {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.listHeader {
+  background-color: #ffffff72;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
   animation: slideDown 0.5s ease-in-out forwards;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px); 
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
-.listHeader {
-  padding: 10px 20px;
-  border-radius: 3px; 
-  cursor: pointer; 
-  transition: all 0.3s ease-in-out; 
-  color: #278acce7; 
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.ulPetlist {
-  transition: all 0.2s ease-in-out;
-  margin-top: 50px;
-  margin: auto;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style-type: none;
-  width: 100%;
-}
-
-.container .h5 {
-  color: rgb(15, 58, 230);
+.listHeader h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
 .searchInput {
-  background-color: #99cdf3; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  padding: 8px 10px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  transition: all 0.2s ease-in-out; 
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #99cdf3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  text-align: center; /* Centering the text in the input */
 }
 
 .searchInput:focus {
-  outline: 2px solid #333; 
+  outline: none;
+  border-color: #278acc;
+  box-shadow: 0 0 5px rgba(39, 138, 204, 0.5);
 }
 
-.searchInput:hover {
-  cursor: text; 
-  background-color: #fecb6d8c; 
+.searchInput::placeholder {
+  color: #999;
 }
 
+.ulPetlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* Centering the grid */
+  width: 100%;
+}
+
+.ulPetlist li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden; /* Ensures image scaling doesn't affect layout */
+}
+
+.ulPetlist li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.petName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+.petImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out; /* Adding transition for scaling */
+}
+
+.ulPetlist li:hover .petImage {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+@media only screen and (max-width: 768px) {
+  .ulPetlist {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
