@@ -8,7 +8,6 @@ html, body {
   margin: 0;
   min-height: calc(100vh - 75px);
   height: 100%;
-  overflow: hidden;
   font-family: "Teachers", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-synthesis: none;
@@ -18,9 +17,6 @@ html, body {
   -webkit-text-size-adjust: 100%;
   background-color: rgb(53, 200, 245);
   box-sizing: border-box;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  overflow: auto;
 }
 
 #root {
@@ -39,8 +35,8 @@ article img {
 }
 
 h1, h3 { 
-  margin: 7px 0px 14px 0px; 
-  color:rgb(241, 242, 247);
+  margin: 7px 0;
+  color: rgb(241, 242, 247);
 }
 
 h1 {
@@ -68,10 +64,9 @@ p {
   margin: 0;
   width: 100%;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 1.6;
   text-align: justify;
-  text-align-last: center;
-  color:rgb(241, 242, 247)
+  color: rgb(241, 242, 247);
 }
 
 a {
@@ -87,15 +82,44 @@ a:visited {
 
 form {
   width: 100%;
-  display: flex;
   max-width: 500px;
-  border-radius: 5px;
+  display: flex;
   flex-direction: column;
+  border-radius: 5px;
   background-color: rgba(50, 63, 110, 0.117);
-  padding: 21px 21px 28px 21px;
+  padding: 21px;
   border: 1px solid rgb(220, 220, 220);
-  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  form {
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  form {
+    max-width: 100%;
+  }
+}

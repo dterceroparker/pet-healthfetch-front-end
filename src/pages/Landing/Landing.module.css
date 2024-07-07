@@ -1,9 +1,3 @@
-@media only screen and (max-width: 768px) {
-  .container section > img {
-    width: 80%; 
-  }
-}
-
 .container {
   min-height: calc(100vh - 75px);
   max-width: 100%;
@@ -15,11 +9,10 @@
 
 .splash {
   margin-top: 50px;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .container > section {
   width: 100%;
@@ -30,90 +23,84 @@
 }
 
 .container section > img {
-  width: 20%; 
-  max-width: 30%;
-  height: auto;
-  margin: 0 auto;
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 20px 20px rgba(35, 106, 150, 0.728);
-  background: hsla(39, 100%, 71%, 1);
-  background: linear-gradient(90deg, hsla(39, 100%, 71%, 1) 0%, hsla(216, 100%, 62%, 1) 100%);
-
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .about {
   height: 80vh;
-  width: 100%; 
+  width: 100%;
   overflow-y: auto;
-  margin: 0 auto; 
-  padding: 2rem 1rem;; 
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2d76b241; 
+}
+
+.about::-webkit-scrollbar-thumb {
+  background-color: #3498db; 
   border-radius: 10px; 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .about article {
   width: 90%;
-  max-width: unset;
   margin: 0;
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 0;
 }
 
 .about article p {
-  font-family: Arial, sans-serif;  
-  font-size: 1rem;                  
-  line-height: 1.5;                
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 500;
   text-align: justify;
   margin: 0;
-  font-size: 1.2rem;
   padding: 1rem;
   letter-spacing: 1px;
   border-radius: 10px;
-  color:rgb(245, 240, 240);
-  box-shadow: 3px 3px rgba(47, 0, 255, 0.011), -.3em 0 .4em #348bd22d;
+  color: #f5f0f0;
   box-shadow: 0 15px 40px rgba(35, 106, 150, 0.728);
-  box-sizing: border-box;
-  border: 1px solid rgb(220, 220, 220); 
+  border: 1px solid rgb(220, 220, 220);
 }
 
 .about article h5 {
-  font-family: Georgia, serif;     
-  font-size: 1rem;               
-  margin-bottom: 1rem;   
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   font-weight: bold;
-  margin-bottom: 1rem; 
-  color: #f0e0d6; 
-  text-align: center; 
-}
-
-.container footer {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #f0e0d6;
+  text-align: center;
 }
 
 .footer {
   padding: 10px;
   display: flex;
-  justify-content: last baseline;
+  justify-content: center;
   width: 100%;
   border-top: 1px dashed rgb(9, 165, 217);
-  color:rgb(250, 250, 250);
+  color: #fafafa;
   margin-top: 20px;
   position: fixed;
   left: 0;
   bottom: 0;
+  text-align: center;
 }
 
 .footer p {
@@ -121,8 +108,6 @@
   font-size: 15px;
   font-weight: bold;
   text-shadow: 1px 1px 2px #2920202b;
-  text-shadow: -4px 1px #0e0d0d,;
-  color:rgb(245, 240, 240);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -145,10 +130,6 @@
     height: 660px;
   }
   .splash img {
-    max-width: 300px; 
-  }
-  
-  .container section > img {
-    min-width: 280px;  
+    max-width: 300px;
   }
 }
