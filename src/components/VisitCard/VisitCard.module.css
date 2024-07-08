@@ -6,6 +6,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #24b1dc68;
   margin-bottom: 20px;
+  width: 100%; 
+  height: 100%; 
+  max-width: 300px; 
 }
 
 .container h1 {
@@ -24,33 +27,34 @@
   font-size: 16px;
   margin: 0;
   font-weight: 500;
+  line-height: 1.5; 
 }
 
 .container section p.urgent {
-  color: rgba(252, 12, 12, 0.663);
+  color: rgba(252, 12, 12, 0.8); 
 }
 
 .container .visitPhoto {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .container #petPhoto {
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
-  border-radius: 8px; 
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease-in-out; 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 .container #petPhoto:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .container header {
   display: flex;
-  justify-content: flex-end; 
-  margin-top: 10px; 
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .container header .actions {
@@ -58,7 +62,8 @@
   align-items: center;
 }
 
-.container header button, .container header a {
+.container header button,
+.container header a {
   width: 30px;
   height: 30px;
   display: flex;
@@ -68,12 +73,14 @@
   border: 1px solid yellow;
 }
 
-.container header button img, .container header a img {
+.container header button img,
+.container header a img {
   width: 24px;
   height: 24px;
 }
 
-.container header button, .container header a {
+.container header button,
+.container header a {
   margin-left: 7px;
   padding: 5px;
   font-size: 14px;
@@ -85,6 +92,19 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.container header button:hover, .container header a:hover {
+.container header button:hover,
+.container header a:hover {
   background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container header {
+    justify-content: center;
+    margin-top: 15px;
+  }
 }
