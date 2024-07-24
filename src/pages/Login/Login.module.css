@@ -38,10 +38,11 @@
 .label {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-  font-weight: 600;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
 }
 
 .loginBtn {
