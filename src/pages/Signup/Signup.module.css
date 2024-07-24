@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 input[type='text'],
@@ -54,14 +55,14 @@ input[type='file'] {
   font-weight: 600;
   cursor: pointer;
   color: #fff;
-  background-color: #2980b9; /* Updated background color */
+  background-color: #2980b9; 
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #1a6496; /* Darker shade for hover effect */
+  background-color: #1a6496; 
 }
 
 .cancel {
@@ -87,11 +88,20 @@ input[type='file'] {
 @media only screen and (max-width: 480px) {
   .form {
     width: 90%;
+    padding: 1rem; 
   }
-}
 
-.form > label:last-of-type {
-  margin-bottom: 16px;
+  input[type='text'],
+  input[type='password'],
+  input[type='file'] {
+    font-size: 12px; 
+    padding: 8px; 
+  }
+
+  .button {
+    padding: 8px 16px; 
+    font-size: 14px; 
+  }
 }
 
 @media only screen and (max-width: 912px) {
@@ -110,4 +120,8 @@ input[type='file'] {
   .container section:nth-child(2) {
     justify-content: flex-start;
   }
+}
+
+.form > label:last-of-type {
+  margin-bottom: 16px;
 }
