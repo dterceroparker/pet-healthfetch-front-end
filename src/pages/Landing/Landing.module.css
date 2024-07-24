@@ -121,7 +121,9 @@
 }
 
 @media only screen and (max-width: 414px) {
-  .about article p, h5 {
+  .about article p,
+  .about article h5 {
     font-size: 0.85rem; 
   }
 }
+
